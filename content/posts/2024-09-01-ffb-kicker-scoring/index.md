@@ -94,12 +94,6 @@ The average increase of 0.3 points per week isn't going to sway many fantasy mat
     caption="Most kicker scores in a given week will have small changes under the new settings, but it's fairly common to have a larger change of +1 or more."
     >}}
 
-<figure>
-  <img src="distribution.png" alt="Example image">
-  <figcaption>This is a caption for the figure.</figcaption>
-</figure>
-
-
 Looking at it another way, that means *some* kicker is probably going to get a big benefit from the new settings each week.
 It would have to be a kicker who made multiple field goals, so some big weeks under the old settings are going to be transformed into *huge* weeks under the new settings.
 If we look at the top 12 scoring kickers in each week, we see that top two or three scorers in a given week typically benefit a lot from from the new settings and the effect gradually shrinks (to basically zero) as we go down the list.
