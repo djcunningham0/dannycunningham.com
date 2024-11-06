@@ -9,3 +9,19 @@ theme = "PaperMod"
     name = "About Me"
     url = "/about/"
     weight = 2  # Adjust the weight to change the order of items in the menu
+
+### enable LaTeX
+# use `\( ... \)` for inline or `$$ ... $$` for block
+# additional setup is in `layouts/partials/math.html` and `layout/partials/extend_head.html`
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+[params]
+  math = true
