@@ -5,6 +5,8 @@ tags = ["data analysis"]
 draft = false
 +++
 
+*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+
 The New York Times [recently highlighted](https://www.nytimes.com/2022/11/27/upshot/road-deaths-pedestrians-cyclists.html) the "exceptionally American" problem of rising road deaths.
 Roadways are becoming safer in virtually every developed country across the world, except for the United States.
 Even during the peak of the COVID-19 pandemic, when there were far fewer cars on the road, [traffic deaths continued to increase](https://www.nytimes.com/2021/01/01/nyregion/nyc-traffic-deaths.html).
