@@ -10,7 +10,7 @@ One of our league members pointed out that our platform (Yahoo) has started offe
 The immediate reaction among the league was mixed: a few people supported the change, one or two opposed it (most were probably indifferent).
 It would be a pretty small change to the least interesting position in the game, but what the heck, let’s (over)analyze it.
 
-### The proposed change
+## The proposed change
 
 In fantasy football, kickers score fantasy points for field goals and extra points.
 The proposed change would only affect field goal scoring.
@@ -25,7 +25,7 @@ Field goals would score 0.1 points per yard (e.g., a 35-yard field goal would sc
 Kickers earn 1 fantasy point for making an extra point.
 Our league does not penalize missed field goals or extra points.)
 
-### Arguments for the change
+## Arguments for the change
 
 The original proposal was that we could "spice up kicking" by making the change.
 
@@ -41,7 +41,7 @@ Every other fantasy football position moved to fractional scoring years ago, so 
 The new scoring system would also arguably be simpler than the current one.
 In general I prefer simple over complicated for fantasy football rules (I think most people would agree with me).
 
-### Arguments against the change
+## Arguments against the change
 
 The main argument from the people who opposed the change was that the relative scores don't fairly account for the value of different kicks.
 Basically, short kicks (< 30 yards) would score fewer points under the new settings and thus would be undervalued.
@@ -52,7 +52,7 @@ There's also an argument that the new scoring system would inflate kicker scores
 While short kicks would be worth fewer points, most field goals are longer than 30 yards and would score more points, so overall kicker scores would increase with the change.
 All reasonable people can agree that kickers should not be the focal point of fantasy football, so it might not be a good idea to increase kicker scoring.
 
-### What does the data say?
+## What does the data say?
 
 Neither set of arguments really swayed me.
 My first thought was, does it even matter?
@@ -67,8 +67,8 @@ It turns out my gut was pretty much right.
 On average, kickers would only score about 0.3 more points per week.
 That's only 5 points over the course of a 17-game regular season.
 
-{{< figure 
-    src="overall_bar_chart.png" 
+{{< figure
+    src="overall_bar_chart.png"
     alt="Bar chart showing average kicking fantasy points per team per week in the 2023 NFL season under the current and proposed scoring settings. Current settings: 8.07. Proposed settings: 8.36."
     caption="Kickers would score about 0.3 more points per week under the new settings."
     >}}
@@ -79,16 +79,16 @@ Nope.
 Everyone seems to get about the same benefit from the new settings, including the top guys.
 (There's some variance of course, and a couple teams--the Raiders and Broncos--would actually score *fewer* points with the new settings.)
 
-{{< figure 
-    src="season_points_by_team.png" 
-    alt="Bar chart showing total season fantasy points for the top 12 teams in 2023 season. Almost all teams would score 4-6 points more under the new settings. Dallas has by far the most points under both the old and new settings." 
+{{< figure
+    src="season_points_by_team.png"
+    alt="Bar chart showing total season fantasy points for the top 12 teams in 2023 season. Almost all teams would score 4-6 points more under the new settings. Dallas has by far the most points under both the old and new settings."
     caption="Most teams get about the same number of additional points under the new settings. (And holy cow, Brett Aubrey had a great year with Dallas. Maybe I'll draft him this year...)"
     >}}
 
 The most notable impact I found was an increased variance in kicker scores.
 The average increase of 0.3 points per week isn't going to sway many fantasy matchups, but there will be weeks somebody scores 1 or 2 extra points, which could easily flip a wins and losses over the course of a season.
 
-{{< figure 
+{{< figure
     src="distribution.png"
     alt="Histogram of the change in fantasy points per team per week if the new settings were adopted. There is a large spike at zero (no change), and most other changes are small positive values, mostly between 0 and 1, with a few extending all the way up to +2.5."
     caption="Most kicker scores in a given week will have small changes under the new settings, but it's fairly common to have a larger change of +1 or more."
@@ -110,7 +110,7 @@ But those big weeks are pretty randomly distributed so it's likely to all wash o
 It may sway a few close matchups, but it's pretty randomly distributed and it doesn't look like any kickers (and by extension, any fantasy managers) stand to gain any advantage over a whole season.
 For those reasons, I'd say the impact of the new kicker scoring settings would be pretty small.
 
-### The verdict
+## The verdict
 
 I decided to put it up to a league vote.
 We have 12 teams in our league, so if we get 6 "yes" votes we'll make the change (I'm sitting out the vote, so that would be a majority).
@@ -120,11 +120,11 @@ Given the minimal impact, I don't feel very strongly about which way the vote go
 If I had to make a choice, I'd probably vote "yes" because I like the simplicity argument (0.1 points per yard seems simpler than the arbitrary distance buckets).
 But it's also just nice to make a change sometimes.
 
-**[UPDATE] We're making the change.** 
+**[UPDATE] We're making the change.**
 The vote passed with 6 "yes" votes to 3 "no" (with 2 people abstaining).
 I'm sure there will be some drama when a few matchups are inevitably impacted by the change!
 
-**[UPDATE 2]** After seeing how great Brett Aubrey was last season, I decided to draft him. 
+**[UPDATE 2]** After seeing how great Brett Aubrey was last season, I decided to draft him.
 Hoping for a repeat!
 
 **[UPDATE 3 🎉]** We had our first matchup result flipped in Week 3, and I was the beneficiary!
