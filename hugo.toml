@@ -1,7 +1,9 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Danny Cunningham'
-theme = "PaperMod"
+
+[author]
+name = "Danny Cunningham"
 
 [menu]
   [[menu.main]]

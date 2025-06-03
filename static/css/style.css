@@ -1,0 +1,161 @@
+body,
+h1,
+h2,
+p,
+nav,
+footer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", system-ui, sans-serif;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 1.125rem;
+}
+h5 {
+    font-size: 1.0625rem;
+}
+h6 {
+    font-size: 1rem;
+}
+
+ul li,
+ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* Body and Layout */
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0 0 1rem 0;
+}
+
+.main-content {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+header nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #007acc;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.site-header {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.site-header .container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.site-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+    font-family: "Raleway", system-ui, sans-serif;
+}
+
+.nav-link {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #555;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Posts */
+article {
+    margin-bottom: 2rem;
+}
+
+article > * + * {
+    margin-top: 1rem;
+}
+
+article h2 a {
+    color: #222;
+}
+
+article h2 a:hover {
+    text-decoration: underline;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+figure {
+    margin: 2rem 0;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888;
+    margin: 0.5rem auto 0;
+    max-width: 640px;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
