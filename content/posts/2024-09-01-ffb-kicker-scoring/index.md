@@ -8,7 +8,7 @@ draft = false
 I've been running a fantasy football league for the past... too many years to count.
 One of our league members pointed out that our platform (Yahoo) has started offering a new scoring option for kickers.
 The immediate reaction among the league was mixed: a few people supported the change, one or two opposed it (most were probably indifferent).
-It would be a pretty small change to the least interesting position in the game, but what the heck, let’s (over)analyze it.
+It would be a pretty small change to the least interesting position in the game, but what the heck, let's (over)analyze it.
 
 ## The proposed change
 
