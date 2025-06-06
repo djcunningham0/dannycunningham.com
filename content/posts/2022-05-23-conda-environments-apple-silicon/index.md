@@ -116,7 +116,8 @@ I created a simple shell function in my ~/.zshrc file so I don't need to remembe
 ### add this to ~/.zshrc (or ~/.bashrc if you're using Bash)
 create_x86_conda_environment () {
   # create a conda environment using x86 architecture
-  # first argument is environment name, all subsequent arguments will be passed to `conda create`
+  # first argument is environment name, all subsequent arguments will be passed
+  # to `conda create`
   # example usage: create_x86_conda_environment myenv_x86 python=3.9
 
   CONDA_SUBDIR=osx-64 conda create -n $@
