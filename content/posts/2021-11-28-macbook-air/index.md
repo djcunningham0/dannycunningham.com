@@ -106,7 +106,7 @@ Let's go through the results from each test one by one.
 
 #### Pandas benchmark test (memory-intensive)
 
-<img src="pandas_benchmark.png" style="display: block; margin: 0 auto; width: 75%;">
+<img src="pandas_benchmark.png" class="img-narrow" style="--img-width: 75%;">
 <figcaption style="text-align: center">Annotation shows the amount of RAM.</figcaption>
 
 The Pandas benchmark test requires large dataframes to be stored and manipulated in memory.
@@ -124,7 +124,7 @@ And M1 kicks Intel's butt.
 
 #### LightGBM benchmark test (CPU-intensive)
 
-<img src="lightgbm_benchmark.png" style="display: block; margin: 0 auto; width: 75%">
+<img src="lightgbm_benchmark.png" class="img-narrow" style="--img-width: 75%;">
 <figcaption style="text-align: center">Annotation shows the number of CPU cores.</figcaption>
 
 The LightGBM benchmark test fits a gradient boosted trees classification model on a large dataset.
@@ -207,7 +207,7 @@ And price, of course!
 All of these laptops are expensive, but the MacBook Pro is *really* expensive.
 You have to decide whether spending that much money on a laptop is worth it, or whether that money is better spent elsewhere.
 
-<img src="price_comparison.png" style="display: block; margin: 0 auto; width: 75%;">
+<img src="price_comparison.png" class="img-narrow" style="--img-width: 75%;">
 <figcaption style="text-align: center">A very important data point.</figcaption>
 
 The MacBook Air is a year older so you can currently find them [refurbished from Apple](https://www.apple.com/shop/refurbished), making it an even better deal.

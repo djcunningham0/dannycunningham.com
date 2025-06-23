@@ -114,6 +114,38 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+/* images and figures */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+.img-narrow {
+    margin: 1rem auto;
+    width: var(--img-width, 75%);
+}
+
+@media (max-width: 690px) {
+    .img-narrow {
+        width: 100%;
+    }
+}
+
+figure {
+    margin: 2rem 0;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888;
+    margin: 0.5rem auto 0;
+    max-width: 640px;
+}
+
 /* Posts */
 article {
     margin-bottom: 2rem;
@@ -129,26 +161,6 @@ article h2 a {
 
 article h2 a:hover {
     text-decoration: underline;
-}
-
-article img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1rem 0;
-}
-
-figure {
-    margin: 2rem 0;
-}
-
-figcaption {
-    text-align: center;
-    font-style: italic;
-    font-size: 0.9em;
-    color: #888;
-    margin: 0.5rem auto 0;
-    max-width: 640px;
 }
 
 /* Footer */
