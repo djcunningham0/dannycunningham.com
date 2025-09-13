@@ -2,8 +2,8 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Danny Cunningham'
 
-[author]
-name = "Danny Cunningham"
+[params.author]
+  name = "Danny Cunningham"
 
 ### enable LaTeX
 # use `\( ... \)` for inline or `$$ ... $$` for block
