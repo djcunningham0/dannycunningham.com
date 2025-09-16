@@ -9,6 +9,7 @@ I've been running a fantasy football league for the past... too many years to co
 One of our league members pointed out that our platform (Yahoo) has started offering a new scoring option for kickers.
 The immediate reaction among the league was mixed: a few people supported the change, one or two opposed it (most were probably indifferent).
 It would be a pretty small change to the least interesting position in the game, but what the heck, let's (over)analyze it.
+I won't go to quite the same lengths I did for [defense scoring]({{< relref "posts/2022-09-06-ffb-defense-scoring" >}}) a couple years ago, but I'll have a little fun with it.
 
 ## The proposed change
 
