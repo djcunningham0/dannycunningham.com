@@ -1,7 +1,7 @@
 +++
 title = 'Are "Hot Ones" Viewers Sexist?'
 date = 2019-08-16
-tags = ["data analysis", "fantasy football", "rankings"]
+tags = ["data analysis", "nlp", "sentiment analysis"]
 draft = false
 +++
 
