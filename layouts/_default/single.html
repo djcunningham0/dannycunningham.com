@@ -1,6 +1,21 @@
 {{ define "main" }}
 <article>
     <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+    <h3 class="subtitle">{{ . }}</h3>
+    {{ end }}
+    <p>
+        <small><i>{{ .Date.Format "January 2, 2006" }}</i></small>
+    </p>
+    <hr />
     {{ .Content }}
+    <hr />
+    {{ with .Params.tags }}
+    <p>
+        Tags: {{ range . }}
+        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+    </p>
+    {{ end }}
 </article>
 {{ end }}
