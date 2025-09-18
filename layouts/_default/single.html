@@ -2,11 +2,12 @@
 <article>
     <h1>{{ .Title }}</h1>
     {{ with .Params.subtitle }}
-    <h3 class="subtitle">{{ . }}</h3>
-    {{ end }}
+    <h2 class="subtitle">{{ . }}</h2>
+    {{ end }} {{with .Date}}
     <p>
-        <small><i>{{ .Date.Format "January 2, 2006" }}</i></small>
+        <small><i>{{ .Format "January 2, 2006" }}</i></small>
     </p>
+    {{ end }}
     <hr />
     {{ .Content }}
     <hr />
