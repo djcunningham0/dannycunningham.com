@@ -199,6 +199,10 @@ article {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+.post-preview .title {
+    margin-top: 0;
+}
+
 .post-preview:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -206,10 +210,6 @@ article {
 
 article > * + * {
     margin-top: 1rem;
-}
-
-article h2 {
-    margin-top: 0;
 }
 
 article h2 a {
