@@ -188,10 +188,19 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+/* Code styling */
+code {
+    background: #f8f9fa;
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    border: 1px solid #e0e3e7;
+}
+
 /* Code blocks */
 pre {
     overflow-x: auto;
-    padding: 1rem;
+    padding: 0.8rem;
     background: #f8f9fa;
     border-radius: 4px;
     border: 1px solid #e0e3e7;
@@ -199,6 +208,8 @@ pre {
 
 pre code {
     display: block;
+    padding: 0;
+    border: none;
 }
 
 .wrap-code pre {
