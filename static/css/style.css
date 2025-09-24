@@ -95,6 +95,41 @@ a:hover {
     color: var(--link-hover);
 }
 
+sup {
+    font-size: 0.7em;
+    vertical-align: baseline;
+    position: relative;
+    top: -0.6em;
+}
+
+sup a {
+    text-decoration: none;
+    position: relative;
+}
+
+.footnote-popup {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0.5em 0.75em;
+    border-radius: 0.5em;
+    max-width: 300px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+
+    opacity: 0;
+    /* transform: translateY(4px); */
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.footnote-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 header nav a,
 .site-title,
 article h2 a {
