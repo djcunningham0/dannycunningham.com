@@ -1,20 +1,4 @@
 {{ define "main" }}
 <h1>Recent Posts</h1>
-{{ range (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
-<article class="post-preview">
-    <h2 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{ with .Params.subtitle }}
-    <h3 class="subtitle">{{ . }}</h3>
-    {{ end }}
-    <p class="meta">
-        {{ .Date.Format "January 2, 2006" }} | ~{{ lang.FormatNumberCustom 0
-        (mul (div (add .WordCount 50) 100) 100) "," "." }} words | {{
-        .ReadingTime }} min read
-    </p>
-    {{ with .Params.excerpt }}
-    <p>{{ . }}</p>
-    {{ else }}
-    <p>{{ .Summary }}</p>
-    {{ end }}
-</article>
-{{ end }} {{ end }}
+{{ partial "post-list.html" (dict "Pages" (where .Site.RegularPages "Section"
+"posts")) }} {{ end }}
