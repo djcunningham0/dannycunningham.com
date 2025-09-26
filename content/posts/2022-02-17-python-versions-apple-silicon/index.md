@@ -2,7 +2,7 @@
 title = "How to Manage Multiple Python Versions on an Apple Silicon M1 Mac"
 subtitle = "Install both ARM64 and x86 Python versions and seamlessly switch between them using pyenv"
 date = 2022-02-17
-tags = ["python"]
+tags = ["python", "environment management"]
 draft = false
 +++
 
