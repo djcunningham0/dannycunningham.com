@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #264653;
+    --primary-color: #2c596b;
     --primary-hover: #2a9d8f;
     --link-color: #e76f51;
     --link-hover: #f4a261;
     --bg-color: #f8f9fa;
     --card-bg: #ffffff;
     --text-primary: #2c3e50;
-    --text-secondary: #546e7a;
+    --text-secondary: #737373;
     --border-color: #e0e3e7;
 }
 
@@ -59,6 +59,12 @@ ol li {
 ul li,
 ol li {
     margin-bottom: 0.5rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    /* margin: 2rem 0; */
 }
 
 /* Body and Layout */
@@ -180,15 +186,20 @@ header nav a:hover {
 .nav-link {
     font-size: 1rem;
     text-decoration: none;
-    color: #555;
+    color: var(--primary-color);
     font-family: "Inter", system-ui, sans-serif;
 }
 
 .nav-link:hover {
+    color: var(--primary-hover);
     text-decoration: underline;
 }
 
-/* Code styling */
+.title {
+    color: var(--primary-color);
+}
+
+/* Code blocks */
 code {
     background: #f8f9fa;
     padding: 0.2rem 0.3rem;
@@ -197,7 +208,6 @@ code {
     border: 1px solid #e0e3e7;
 }
 
-/* Code blocks */
 pre {
     overflow-x: auto;
     padding: 0.8rem;
@@ -256,7 +266,7 @@ figcaption {
 
 /* Posts */
 article {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 1.5rem;
     background: white;
     border-radius: 8px;
@@ -296,7 +306,7 @@ article h2 a:hover {
 
 .meta {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-secondary);
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -304,9 +314,10 @@ article h2 a:hover {
 }
 
 .subtitle {
-    color: #555;
+    color: var(--primary-color);
     font-weight: 400;
     margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .post-date {

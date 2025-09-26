@@ -1,13 +1,14 @@
 {{ define "main" }}
 <article>
-    <h1>{{ .Title }}</h1>
+    <h1 class="title">{{ .Title }}</h1>
     {{ with .Params.subtitle }}
-    <h2 class="subtitle">{{ . }}</h2>
-    {{ end }} {{with .Date}}
-    <p>
-        <small><i>{{ .Format "January 2, 2006" }}</i></small>
-    </p>
+    <h3 class="subtitle">{{ . }}</h3>
     {{ end }}
+    <p class="meta">
+        {{ .Date.Format "January 2, 2006" }} | ~{{ lang.FormatNumberCustom 0
+        (mul (div (add .WordCount 50) 100) 100) "," "." }} words | {{
+        .ReadingTime }} min read
+    </p>
     <hr />
     {{ .Content }}
     <hr />
