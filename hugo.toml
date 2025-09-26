@@ -19,6 +19,8 @@ title = 'Danny Cunningham'
           inline = [['\(', '\)']]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = "github"
 
 [params]
   math = true

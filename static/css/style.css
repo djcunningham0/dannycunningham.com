@@ -232,6 +232,11 @@ pre code {
     overflow-y: auto;
 }
 
+pre code,
+.highlight pre {
+    background: #f8f9fa !important; /* override syntax highlighting background */
+}
+
 /* images and figures */
 img {
     max-width: 100%;
