@@ -1,5 +1,5 @@
 +++
-title = 'Are "Hot Ones" Viewers Sexist?'
+title = "Are \"Hot Ones\" Viewers Sexist?"
 date = 2019-08-16
 tags = ["data analysis", "nlp", "sentiment analysis"]
 draft = false

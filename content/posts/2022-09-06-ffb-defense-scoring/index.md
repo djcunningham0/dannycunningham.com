@@ -1,10 +1,10 @@
 +++
 title = "Should My Fantasy Football League Change Our Defense Scoring Settings?"
 subtitle = "Analyzing the impact of possible changes"
-excerpt = "Some of my fantasy football league members want to make changes to defense scoring settings. I'm not sure it's a good idea, or if it even matters at all. Let's find out! Featuring a Streamlit web app and the (ugly) Yahoo Fantasy Sports API."
 date = 2022-09-06
 tags = ["data analysis", "fantasy football", "streamlit", "web apps"]
 draft = false
+description = "Some of my fantasy football league members want to make changes to defense scoring settings. I'm not sure it's a good idea, or if it even matters at all. Let's find out! Featuring a Streamlit web app and the (ugly) Yahoo Fantasy Sports API."
 +++
 
 I've been the commissioner of a fantasy football league for a few (maybe more than a few) years now.

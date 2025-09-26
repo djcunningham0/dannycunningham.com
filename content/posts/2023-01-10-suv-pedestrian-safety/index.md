@@ -37,7 +37,7 @@ It's easy to start working with Socrata datasets: simply follow the [documentati
 I used the [sodapy](https://github.com/xmunoz/sodapy) Python package to interact with the API.
 
 Specifically, I used the three datasets related to Chicago traffic crashes:
-* [Crashes](https://dev.socrata.com/foundry/data.cityofchicago.org/85ca-t3if): Basic details about the crash, such as where and when it occurred. 
+* [Crashes](https://dev.socrata.com/foundry/data.cityofchicago.org/85ca-t3if): Basic details about the crash, such as where and when it occurred.
   One record per crash.
 * [People](https://dev.socrata.com/foundry/data.cityofchicago.org/u6pd-qa9d): Details about people involved in the crash.
   Identifies whether a person was injured and whether they were a driver or pedestrian.
@@ -89,7 +89,7 @@ Specifically, we'll be able to see whether vehicle type has a significant effect
 
 The full math behind logistic regression is beyond the scope of this article, but essentially the model will produce a linear predictor:
 
-$$ 
+$$
 \beta_0 + \beta_{is\_suv}X_{is\_suv} + \beta_{is\_pickup}X_{is\_pickup} + \beta_{speed\_limit}X_{speed\_limit} + \dots
 $$
 
@@ -102,11 +102,11 @@ We'll fit two separate logistic regression models: one to predict pedestrian dea
 
 We're making several assumptions in the model, either explicitly or implicitly:
 
-1. SUVs and smaller cars are involved crashes involving pedestrians at an equal rate. 
-We're only predicting the outcome of a crash, not whether the crash would have occurred at all with a different car. 
-*(Note: there is [some evidence](https://www.iihs.org/news/detail/suvs-other-large-vehicles-often-hit-pedestrians-while-turning) that SUVs hit pedestrians at a higher rate than small cars, which would dispute this assumption. 
+1. SUVs and smaller cars are involved crashes involving pedestrians at an equal rate.
+We're only predicting the outcome of a crash, not whether the crash would have occurred at all with a different car.
+*(Note: there is [some evidence](https://www.iihs.org/news/detail/suvs-other-large-vehicles-often-hit-pedestrians-while-turning) that SUVs hit pedestrians at a higher rate than small cars, which would dispute this assumption.
 If that is indeed true, the impact of SUVs on pedestrian deaths may be worse than results below indicate.)*
-2. All SUVs are the same (and all pickup trucks are the same). 
+2. All SUVs are the same (and all pickup trucks are the same).
 Obviously this is not the case in the real world, as SUVs come in vastly different shapes and sizes.
 
 {{< figure
@@ -117,7 +117,7 @@ Obviously this is not the case in the real world, as SUVs come in vastly differe
 
 ## Results
 
-So are SUVs and pickup trucks more dangerous to pedestrians? 
+So are SUVs and pickup trucks more dangerous to pedestrians?
 Yes.
 
 The logistic regression models show that SUVs are 16% more likely to cause incapacitating injuries and 36% more likely to kill pedestrians than smaller cars.
@@ -130,12 +130,12 @@ In other words, if those vehicles were replaced by smaller cars those deaths wou
     caption="205 pedestrians were killed by personal vehicles between 2017 and 2022. Approximately 20 lives would have been saved if SUVs and pickup trucks were replaced with smaller cars."
     >}}
 
-The model also identifies some other interesting (but maybe not wholly surprising) factors that contribute to pedestrian fatalities. 
+The model also identifies some other interesting (but maybe not wholly surprising) factors that contribute to pedestrian fatalities.
 The table below shows the impact of all features that the model found to be statistically significant.
 Here is a summary of the key findings:
 
 * **Large vehicles are more dangerous to pedestrians.**
-SUVs and pickup trucks are statistically more likely to cause incapacitating injuries. 
+SUVs and pickup trucks are statistically more likely to cause incapacitating injuries.
 A fairly obvious result and the main topic of this article.
 * **High speeds are dangerous to pedestrians.**
 And, perhaps more importantly, *conditions that allow for high speeds* are dangerous to pedestrians.
@@ -161,7 +161,7 @@ The following table shows the data points supporting the summarized information 
 ## Conclusions… and what can we do about it?
 
 We reached the conclusion that—drumroll, please!—bigger, heavier cars are more likely to kill pedestrians than smaller, lighter cars.
-Ok... not exactly groundbreaking. 
+Ok... not exactly groundbreaking.
 However, a lot of people don't realize it's a problem in our cities—I never thought about it until it was pointed out to me.
 I'm hopeful that some hard evidence will spread awareness of the problem.
 
@@ -172,7 +172,7 @@ I'm not even going to try to talk you out of buying one.
 There are plenty of reasons people buy those vehicles (and some of those reasons might even be valid).
 
 Notably, SUVs do appear to make the driver safer in a crash.
-That presents a situation in which each individual driver is incentivized to buy a large vehicle, but if every driver makes that decision the system becomes more dangerous for everyone (especially people outside cars). 
+That presents a situation in which each individual driver is incentivized to buy a large vehicle, but if every driver makes that decision the system becomes more dangerous for everyone (especially people outside cars).
 The only clear winner in that ["safety arms race"](https://www.cbc.ca/radio/thecurrent/the-current-for-nov-1-2019-1.5344114/driver-safety-arms-race-fuelling-boom-in-gas-guzzling-suvs-says-journalist-1.5344145) scenario is the car company wants to sell you an expensive SUV rather than a cheaper sedan.
 
 At the risk of getting a little political, one way to address the problem would be through regulation.

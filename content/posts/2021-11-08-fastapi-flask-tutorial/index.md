@@ -30,8 +30,8 @@ I thought other beginners might benefit from what I learned.
 2. **Read the [Flask tutorial](https://flask.palletsprojects.com/en/2.0.x/tutorial/).**
    It explains the app we're building, plus there's a lot of good information in the tutorial that isn't framework specific.
    If you're already familiar with web frameworks you can just skim the tutorial, but if you're brand new it might be beneficial to complete it (it'll only take a couple hours, max).
-3. **Do it yourself!** 
-   Code the app from scratch, start from Flask example and convert it to FastAPI, or clone my GitHub repository tinker with it. 
+3. **Do it yourself!**
+   Code the app from scratch, start from Flask example and convert it to FastAPI, or clone my GitHub repository tinker with it.
    The best way to learn is by doing!
 
 ## The tutorial app
@@ -56,7 +56,7 @@ This isn't a complete list, but here are some key differences between the Flask 
 * **No application factory.**
   The Flask tutorial recommends implementing an “[application factory](https://flask.palletsprojects.com/en/2.0.x/tutorial/factory/#the-application-factory)” in the `__init__.py` file.
   I typically don't like putting much code in `__init__.py` files so I created the FastAPI app object inside the `main.py` file, which is a typical pattern in FastAPI documentation.
-* **Run with uvicorn.** 
+* **Run with uvicorn.**
   In Flask, we set some environment variables and then call `flask run`.
   FastAPI recommends using uvicorn, so we run our app with `uvicorn fastr.main:app`.
 * **Different names for the same thing.**
