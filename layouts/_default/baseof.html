@@ -3,6 +3,26 @@
     <head>
         <meta charset="UTF-8" />
         <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+        {{ with .Params.subtitle }}
+        <meta name="subtitle" content="{{ . }}" />
+        {{ end }}
+        <meta
+            name="description"
+            content="{{ with .Params.subtitle }}{{ . }}{{ with $.Params.description }} || {{ . }}{{ end }}{{ else }}{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}{{ end }}"
+        />
+
+        <!-- Open Graph / Social Preview -->
+        <meta
+            property="og:title"
+            content="{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}"
+        />
+        <meta
+            property="og:description"
+            content="{{ with .Params.subtitle }}{{ . }}{{ with $.Params.description }} || {{ . }}{{ end }}{{ else }}{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}{{ end }}"
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ .Permalink }}" />
+
         {{ partial "extend_head.html" . }}
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
