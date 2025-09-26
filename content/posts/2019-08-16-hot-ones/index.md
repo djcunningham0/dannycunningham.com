@@ -1,11 +1,15 @@
 +++
 title = "Are \"Hot Ones\" Viewers Sexist?"
+subtitle = "Maybe a little bit, according to text analysis of YouTube comments"
 date = 2019-08-16
 tags = ["data analysis", "nlp", "sentiment analysis"]
 draft = false
+description = "I analyzed the comments from episodes of the popular YouTube series \"Hot Ones\" and found some differences between episodes with male and female guests."
 +++
 
-*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
+</small>
 
 *Hot Ones*, "the show with hot questions and even hotter wings", has become something of a spectacle.
 Since debuting four years ago in 2015, the YouTube interview show has grown steadily in popularity.

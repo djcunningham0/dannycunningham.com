@@ -4,9 +4,12 @@ subtitle = "Install both ARM64 and x86 Python versions and seamlessly switch bet
 date = 2022-02-17
 tags = ["python", "environment management"]
 draft = false
+description = "A basic tutorial for managing Python environments using my preferred tool, pyenv."
 +++
 
-*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
+</small>
 
 This article describes how to manage ARM64 and x86 Python environments using pyenv.
 Personally, I love the simplicity of pyenv.

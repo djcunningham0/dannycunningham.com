@@ -3,9 +3,12 @@ title = "Using FastAPI to Recreate the Flask Tutorial"
 date = 2021-11-08
 tags = ["programming", "web apps", "learning"]
 draft = false
+description = "I wanted to try out the popular FastAPI framework. As a learning exercise, I reproduced a simple Flask tutorial using FastAPI."
 +++
 
-*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
+</small>
 
 Flask and FastAPI are two popular Python web frameworks.
 It's easy to find tons of comparisons of the two frameworks online — if you're reading this post you've probably already read your share of "Flask vs. FastAPI” articles.

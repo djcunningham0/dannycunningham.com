@@ -4,9 +4,12 @@ subtitle = "Manage both ARM64 and x86 Python environments using conda"
 date = 2022-05-23
 tags = ["python", "environment management"]
 draft = false
+description = "A basic tutorial for managing Python environments using conda (for those who don't like pyenv, or when pyenv isn't sufficient)."
 +++
 
-*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
+</small>
 
 This article describes how to manage both ARM64 and x86 Python environments using conda.
 To accomplish the same thing using pyenv (my preferred tool) and virtual environments, see my [other post]({{< relref "posts/2022-02-17-python-versions-apple-silicon" >}}).

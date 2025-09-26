@@ -4,12 +4,15 @@ subtitle = "Benchmark tests and other considerations to help you decide between 
 date = 2021-11-28
 tags = ["apple", "data science"]
 draft = false
+description = "I recently replaced my old laptop. Despite looking forward to the release of the new MacBook Pro for years, I opted for the MacBook Air instead. Why? It offers good performance and much better value. Most people (but not everyone) should probably make the same choice."
 +++
 
-*I originally wrote this post [on Medium](https://medium.com/@djcunningham0).
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.
 It was shockingly popular (turns out people love reading about Apple products), so I figured I'd move it here when I deactivated my Medium account.
-There have obviously been several new generations of Macbooks released since I wrote this post in 2021, so it's a bit out of date.
-But my main recommendations remain unchanged—just replace "M1" with whatever generation Apple is on now.*
+There have obviously been several new generations of MacBooks released since I wrote this post in 2021, so it's a bit out of date.
+But my main recommendations remain unchanged—just replace "M1" with whatever generation Apple is on now.</i>
+</small>
 
 ---
 

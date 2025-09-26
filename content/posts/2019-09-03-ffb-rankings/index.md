@@ -1,11 +1,15 @@
 +++
 title = "The Lazy Data Scientist's Fantasy Football Rankings"
+subtitle = "Blending fantasy football expert rankings with rank aggregation methods"
 date = 2019-09-03
 tags = ["data analysis", "fantasy football", "rankings"]
 draft = false
+description = "Exploring how rank aggregation methods can be applied to fantasy football. Sometimes the consensus is more accurate than the predictions from any individual expert."
 +++
 
-*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
+</small>
 
 This is an article about creating fantasy football rankings.
 I claim (without proof... yet) that these rankings will be more reliable than most you'll find on the internet.

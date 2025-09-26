@@ -1,11 +1,15 @@
 +++
 title = "Developing a Generalized Elo Rating System for Multiplayer Games"
+subtitle = "And using it to prove that I’m a terrible poker player"
 date = 2021-09-26
 tags = ["data analysis", "rankings", "web apps", "python", "poker"]
 draft = false
+description = "Elo is a rating system for two-player games, such as chess. I developed a Python implementation of a generalized Elo system that works for multiplayer games. Then I built a web app to track the Elo ratings of my friend group's poker games. At the risk of personal embarrassment, I'm publishing the results."
 +++
 
-*I originally wrote this post [on Towards Data Science](https://medium.com/@djcunningham0) before moving it here.*
+<small>
+<i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
+</small>
 
 [Elo](https://en.wikipedia.org/wiki/Elo_rating_system) is perhaps the best know rating system.
 It was originally invented to measure the relative skill of chess players, and it's been applied to many other games since then.

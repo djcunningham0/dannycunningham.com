@@ -4,6 +4,7 @@ subtitle = "Analyzing potential changes to fantasy football's least important po
 date = 2024-09-01
 tags = ["data analysis", "fantasy football"]
 draft = false
+description = "Another year, another request for fantasy football rule changes. This time some people want to use a new scoring system for kickers. Let's (over)analyze how it would impact scoring."
 +++
 
 I've been running a fantasy football league for the past... too many years to count.
