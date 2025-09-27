@@ -8,6 +8,7 @@
     --text-primary: #2c3e50;
     --text-secondary: #737373;
     --border-color: #e0e3e7;
+    --white: #ffffff;
 }
 
 body,
@@ -116,8 +117,8 @@ sup a {
 .footnote-popup {
     display: none;
     position: absolute;
-    background: #fff;
-    border: 1px solid #ddd;
+    background: var(--white);
+    border: 1px solid var(--border-color);
     padding: 0.5em 0.75em;
     border-radius: 0.5em;
     max-width: 300px;
@@ -201,19 +202,19 @@ header nav a:hover {
 
 /* Code blocks */
 code {
-    background: #f8f9fa;
+    background: var(--bg-color);
     padding: 0.2rem 0.3rem;
     border-radius: 3px;
     font-size: 0.9em;
-    border: 1px solid #e0e3e7;
+    border: 1px solid var(--border-color);
 }
 
 pre {
     overflow-x: auto;
     padding: 0.8rem;
-    background: #f8f9fa;
+    background: var(--bg-color);
     border-radius: 4px;
-    border: 1px solid #e0e3e7;
+    border: 1px solid var(--border-color);
 }
 
 pre code {
@@ -234,7 +235,34 @@ pre code {
 
 pre code,
 .highlight pre {
-    background: #f8f9fa !important; /* override syntax highlighting background */
+    background: var(
+        --bg-color
+    ) !important; /* override syntax highlighting background */
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid var(--primary-color);
+    background: var(--bg-color);
+}
+
+blockquote p {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    font-style: normal;
 }
 
 /* images and figures */
@@ -264,7 +292,7 @@ figcaption {
     text-align: center;
     font-style: italic;
     font-size: 0.9em;
-    color: #888;
+    color: var(--text-secondary);
     margin: 0.5rem auto 0;
     max-width: 640px;
 }
@@ -325,19 +353,12 @@ article h2 a:hover {
     margin-bottom: 0.5rem;
 }
 
-.post-date {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-    margin: 0.5rem 0 1rem;
-}
-
 /* Footer */
 footer {
     margin-top: 3rem;
     padding-top: 1rem;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border-color);
     text-align: center;
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-secondary);
 }
