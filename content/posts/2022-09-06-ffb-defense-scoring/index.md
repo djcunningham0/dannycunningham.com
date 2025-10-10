@@ -12,14 +12,14 @@ In recent years a few people have suggested (sometimes enthusiastically) that we
 So this offseason I posed a question to the league: which defense scoring changes would you like to see?
 
 Suggestions abounded, ranging from small to sweeping:
-* Give a few more points when a defense allows a low score
-* Interceptions and fumble recoveries should be worth more
-* 4th down stops are turnovers, too—points for those!
-* Points against shouldn't matter at all—score based on yards allowed instead
-* And neither should sacks—no points for sacks!
-* What about tackles for a loss?
-* Calculate a score based on \<this formula I made up\>
-* *Get rid of defense completely!!!*
+> * Give a few more points when a defense allows a low score
+> * Interceptions and fumble recoveries should be worth more
+> * 4th down stops are turnovers, too—points for those!
+> * Points against shouldn't matter at all—score based on yards allowed instead
+> * And neither should sacks—no points for sacks!
+> * What about tackles for a loss?
+> * Calculate a score based on \<this formula I made up\>
+> * *Get rid of defense completely!!!*
 
 As commissioner, I tried to take a neutral stance and suss out the majority opinion.
 But my opinion on defense scoring was pretty firmly:
