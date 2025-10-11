@@ -4,20 +4,7 @@
     {{ with .Params.subtitle }}
     <h3 class="subtitle">{{ . }}</h3>
     {{ end }}
-    <p class="meta">
-        {{ .Date.Format "January 2, 2006" }} | ~{{ lang.FormatNumberCustom 0
-        (mul (div (add .WordCount 50) 100) 100) "," "." }} words | {{
-        .ReadingTime }} min read
-    </p>
     <hr />
     {{ .Content }}
-    <hr />
-    {{ with .Params.tags }}
-    <p>
-        Tags: {{ range . }}
-        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
-    </p>
-    {{ end }}
 </article>
 {{ end }}
