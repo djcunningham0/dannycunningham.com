@@ -1,5 +1,5 @@
 +++
-title = "Chicago Tool Library Search Improvements: Part 1"
+title = "Tool Library Search Improvements: Part 1"
 subtitle = "Identifying the problem(s)"
 date = 2025-06-26
 tags = ["data analysis", "information retrieval", "chicago tool library"]
