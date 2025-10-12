@@ -193,7 +193,7 @@ pg_search_scope :search_by_anything,
 
 In that example, we're telling PostgreSQL to search across multiple columns (name, number, etc.) and that some columns are more important than others.
 An "A" weight is more important than a "B" weight, and so on, so a match in the "name" column is more important than a match in the "brand" column.
-There's some fairly straightforward configurability there, but you can also see that it's someone limited (for example, you only have four discrete weights to choose from).
+That's some fairly straightforward configurability, it's somewhat limited (for example, you only have four discrete weights to choose from).
 
 Here's how I'd sum up the pros and cons of PostgreSQL full text search:
 
@@ -204,7 +204,7 @@ Pros:
 * Easy to get pretty good results out of the box
 
 Cons:
-* Not robust to typos
+* Not robust to typos (might be better if we enable [trigram search](https://github.com/Casecommons/pg_search?tab=readme-ov-file#trigram-trigram-search); more on that in a future post)
 * Struggles with word order and semantic meaning (example: it fails to understand that "table" is semantically more similar to "folding table" than "table saw")
 
 Somewhere in between:
@@ -213,7 +213,7 @@ Somewhere in between:
 In summary, **pg_search works pretty well for our needs but we're encountering some of its limitations.**
 It's important for us to have something relatively simple and easy to maintain, but we'll need to do some tuning or find creative solutions to solve the problems we're encountering.
 
-## Limitations and constraints
+## Tool library limitations and constraints
 
 Lastly, it's worth noting some of the real-world constraints at play.
 In most of my professional experience, I've worked for large companies with huge budgets.
