@@ -6,7 +6,7 @@ tags = ["data analysis", "information retrieval", "chicago tool library"]
 draft = false
 description = """
   Subjective analysis can only take us so far.
-  Let's attempt to objectively evaluate search performance so we can measure whether our solutions are working.
+  Let's attempt to quantify search performance so we can measure whether our solutions are working.
   In this post, I describe methodology to infer the relevant items for each query and the quality of search results.
 """
 +++
