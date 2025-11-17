@@ -164,8 +164,7 @@ In summary, we:
 * Started logging search data so we can identify issues and measure the effectiveness of solutions
 * Implemented a few quick wins targeting some small and specific scenarios
 
-In Part 3 we'll zoom back out to the big picture and discuss how to quantify our search performance as a whole.
-
+In [Part 3]({{< relref "posts/2025-11-16-chicago-tool-library-search-3" >}}) we'll zoom back out and discuss how to quantify our search performance, which will set us up to make broader improvements.
 
 
 [^1]: "Wheel barrel" was the 10th most common query to return zero results, so it was affecting a decent number of users.
