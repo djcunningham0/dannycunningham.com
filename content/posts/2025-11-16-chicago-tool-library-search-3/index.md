@@ -1,6 +1,6 @@
 +++
 title = "Tool Library Search Improvements: Part 3"
-subtitle = "Quantifying the Problem"
+subtitle = "Quantifying the problem"
 date = 2025-11-16
 tags = ["data analysis", "information retrieval", "chicago tool library"]
 draft = false

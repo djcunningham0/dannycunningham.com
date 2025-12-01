@@ -5,7 +5,7 @@ date = 2025-06-26
 tags = ["data analysis", "information retrieval", "chicago tool library"]
 draft = false
 description = """
-    An overview of the Circulate app and common problems with its search functionality.
+    An overview of the Chicago Tool Library's web app and common problems with its search functionality.
     Not talking solutions yet, just seeing what types of problems exist.
     Plus, some constraints and limitations of a volunteer project with a shoestring budget.
 """
