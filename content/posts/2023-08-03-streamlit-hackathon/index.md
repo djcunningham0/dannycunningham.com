@@ -108,7 +108,6 @@ Here's a bad photo of me wearing the hoodie:
 <img src="bad_photo_of_me.png" class="img-narrow" style="--img-width: 67%;" alt="me wearing the Streamlit hoodie">
 <figcaption>
     I look like a dork but I like the hoodie!
-    (Even if it might make me look like even more of a dork.)
 </figcaption>
 
 
