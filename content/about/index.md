@@ -8,7 +8,7 @@ I currently live in Chicago and work as a data scientist in the real estate indu
 
 Most of what I write about here is related to data analysis and coding.
 Usually nothing fancy, just small projects or analyses on topics that interest me.
-I used to write occasional articles at [Towards Data Science](https://medium.com/@djcunningham0) (previously owned by Medium) but now I plan on writing here instead.
+I used to write occasional articles at Towards Data Science (previously owned by Medium) but now I plan on writing here instead.
 
 Outside of my data and coding projects I enjoy being active.
 I bike around Chicago a lot (for commuting and exercise), and I try to go on a few big outdoors trips each year, ranging from hiking to bikepacking to packrafting.
