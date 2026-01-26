@@ -1,13 +1,26 @@
 {{ define "main" }}
-<section class="intro">
-    {{ with .Site.Params.profileImage }}
-    <img src="{{ . }}" alt="{{ $.Site.Title }}" class="intro-photo">
-    {{ end }}
-    <div class="intro-text">
-        <p>{{ .Site.Params.intro }} <a href="/about/">More about me</a></p>
+<div class="home-layout">
+    <aside class="sidebar">
+        {{ with .Site.Params.profileImage }}
+        <img src="{{ . }}" alt="{{ $.Site.Title }}" class="sidebar-photo">
+        {{ end }}
+        <p class="sidebar-intro">{{ .Site.Params.intro }}</p>
+        <a href="/about/" class="sidebar-link">More about me</a>
+    </aside>
+    <div class="post-list">
+        <h2>Posts</h2>
+        {{ range (where .Site.RegularPages "Section" "posts") }}
+        <div class="post-item">
+            <div class="post-header">
+                <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+                <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }} | {{ .ReadingTime }} min read</span>
+            </div>
+            {{ with .Params.subtitle }}
+            <p class="post-subtitle">{{ . }}</p>
+            {{ end }}
+            <p class="post-excerpt">{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+        </div>
+        {{ end }}
     </div>
-</section>
-
-<h2>Recent Posts</h2>
-{{ partial "post-list.html" (dict "Pages" (where .Site.RegularPages "Section"
-"posts")) }} {{ end }}
+</div>
+{{ end }}

@@ -1,3 +1,19 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ partial "post-list.html" (dict "Pages" .Pages) }} {{ end }}
+<div class="list-page">
+    <h1>{{ .Title }}</h1>
+    <div class="post-list">
+        {{ range .Pages }}
+        <div class="post-item">
+            <div class="post-header">
+                <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+                <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }} | {{ .ReadingTime }} min read</span>
+            </div>
+            {{ with .Params.subtitle }}
+            <p class="post-subtitle">{{ . }}</p>
+            {{ end }}
+            <p class="post-excerpt">{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
