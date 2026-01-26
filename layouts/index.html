@@ -1,4 +1,13 @@
 {{ define "main" }}
+<section class="intro">
+    {{ with .Site.Params.profileImage }}
+    <img src="{{ . }}" alt="{{ $.Site.Title }}" class="intro-photo">
+    {{ end }}
+    <div class="intro-text">
+        <p>{{ .Site.Params.intro }} <a href="/about/">More about me</a></p>
+    </div>
+</section>
+
 <h2>Recent Posts</h2>
 {{ partial "post-list.html" (dict "Pages" (where .Site.RegularPages "Section"
 "posts")) }} {{ end }}

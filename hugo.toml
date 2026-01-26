@@ -24,3 +24,5 @@ title = 'Danny Cunningham'
 
 [params]
   math = true
+  intro = "I'm a data scientist based in Chicago. I write about data analysis, coding, and small projects on topics that interest me. Nothing fancy, just explorations of things I find interesting."
+  profileImage = "/images/profile.png"
