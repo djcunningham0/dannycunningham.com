@@ -4,10 +4,8 @@
     <div class="post-list">
         {{ range .Pages }}
         <div class="post-item">
-            <div class="post-header">
-                <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
-                <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }} | {{ .ReadingTime }} min read</span>
-            </div>
+            <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+            <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }} | {{ .ReadingTime }} min read</span>
             {{ with .Params.subtitle }}
             <p class="post-subtitle">{{ . }}</p>
             {{ end }}

@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #2c596b;
+    --primary-color: #356a7c;
     --primary-hover: #2a9d8f;
     --link-color: #e76f51;
     --link-hover: #f4a261;
@@ -106,7 +106,7 @@ a:hover {
 }
 
 .site-title:hover {
-    color: var(--primary-hover);
+    color: var(--link-color);
 }
 
 header nav {
@@ -124,7 +124,7 @@ header nav a,
 
 header nav a:hover,
 .nav-link:hover {
-    color: var(--primary-hover);
+    color: var(--link-color);
     text-decoration: underline;
 }
 
@@ -179,6 +179,14 @@ header nav a:hover,
 }
 
 .post-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "title meta"
+        "subtitle subtitle"
+        "excerpt excerpt";
+    align-items: baseline;
+    gap: 0.35rem 1rem;
     padding: 1.25rem 0;
     border-bottom: 1px solid var(--border-color);
 }
@@ -187,14 +195,8 @@ header nav a:hover,
     border-top: 1px solid var(--border-color);
 }
 
-.post-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-}
-
 .post-title {
+    grid-area: title;
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
@@ -204,26 +206,40 @@ header nav a:hover,
 }
 
 .post-title:hover {
-    color: var(--primary-hover);
+    color: var(--link-color);
 }
 
 .post-meta {
+    grid-area: meta;
     color: var(--text-secondary);
     font-size: 0.85rem;
     white-space: nowrap;
 }
 
 .post-subtitle {
+    grid-area: subtitle;
     color: var(--text-subtitle);
     font-size: 1.05rem;
-    margin: 0.35rem 0 0;
+    margin: 0;
 }
 
 .post-excerpt {
+    grid-area: excerpt;
     color: var(--text-primary);
     font-size: 0.9rem;
-    margin: 0.5rem 0 0;
+    margin: 0;
     line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+    .post-item {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "subtitle"
+            "meta"
+            "excerpt";
+    }
 }
 
 @media (max-width: 800px) {
