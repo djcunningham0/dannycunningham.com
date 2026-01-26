@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #2c596b;
+    --primary-color: #356a7c;
     --primary-hover: #2a9d8f;
     --link-color: #e76f51;
     --link-hover: #f4a261;
@@ -106,7 +106,7 @@ a:hover {
 }
 
 .site-title:hover {
-    color: var(--primary-hover);
+    color: var(--link-color);
 }
 
 header nav {
@@ -124,7 +124,7 @@ header nav a,
 
 header nav a:hover,
 .nav-link:hover {
-    color: var(--primary-hover);
+    color: var(--link-color);
     text-decoration: underline;
 }
 
@@ -204,7 +204,7 @@ header nav a:hover,
 }
 
 .post-title:hover {
-    color: var(--primary-hover);
+    color: var(--link-color);
 }
 
 .post-meta {
