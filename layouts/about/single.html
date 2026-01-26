@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="about-page">
+    <h1 class="title">{{ .Title }}</h1>
+    <hr />
+    {{ with .Site.Params.profileImage }}
+    <img src="{{ . }}" alt="{{ $.Site.Title }}" class="about-photo">
+    {{ end }}
+    {{ .Content }}
+</article>
+{{ end }}

@@ -167,6 +167,24 @@ header nav a:hover,
     }
 }
 
+/* About Page */
+.about-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+    border-radius: 10%;
+}
+
+@media (max-width: 480px) {
+    .about-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 1.5rem;
+    }
+}
+
 /* Articles & Posts */
 article {
     margin-bottom: 2rem;
