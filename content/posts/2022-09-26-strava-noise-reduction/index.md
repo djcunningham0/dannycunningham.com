@@ -21,12 +21,14 @@ When I upload a run in that area, the GPS track shows me bouncing all over the p
 
 Here's an example of a particularly noisy run:
 
-![](bad_track.png)
+<figure>
+<img src="bad_track.png">
 <figcaption>
     Strava would have you believe I ran through the Chicago River and several buildings.
     I assure you I did not.
     (<a href="https://www.strava.com/activities/2657487857">link to activity on Strava</a>)
 </figcaption>
+</figure>
 
 To be clear, this isn't really a Strava issue.
 Strava relies on the GPS tracker in your phone, and every GPS device struggles in downtown Chicago.
@@ -61,12 +63,14 @@ Kalman filters are a type of Bayesian filter.
 In Bayesian terms, the prediction step produces a *prior*, the measurement is a *likelihood*, and the update step produces a *posterior.*
 I've obviously omitted a lot of details about *how* the Kalman filter performs the prediction and update, but the core concept should be pretty clear.
 
-![](simple_kf_diagram.png)
+<figure>
+<img src="simple_kf_diagram.png">
 <figcaption>
     This simple diagram (taken from <a href="https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/01-g-h-filter.ipynb">Chapter 1</a> of the book) illustrates the core concept behind Kalman filters.
     First we use the current state (<code>last_estimate</code>) to predict the next state (<code>prediction</code>).
     Then we observe <code>measurement</code> and combine it with <code>prediction</code> to produce our final estimate of the current state (<code>estimate</code>).
 </figcaption>
+</figure>
 
 ## Can Kalman filters de-noise my Strava tracks?
 
@@ -140,7 +144,8 @@ So how does it perform?
 Reasonably well, I'd say.
 Let's try it on that very noisy run I showed at the beginning:
 
-![](noisy_run_filter_1.png)
+<figure>
+<img src="noisy_run_filter_1.png">
 <figcaption>
     <p>
       The beginning section of <a href="https://www.strava.com/activities/2657487857">my run</a>.
@@ -150,6 +155,7 @@ Let's try it on that very noisy run I showed at the beginning:
     <p><b>Blue line:</b> processed with first-order Kalman filter.</p>
     <p><b>Pink line:</b> first-order Kalman filter + RTS smoothing.</p>
 </figcaption>
+</figure>
 
 There's pretty clearly some improvement there.
 The raw Strava track is extremely noisy in this part—it goes through the river, does some loop-de-loops, then zigzags through buildings.
@@ -159,11 +165,13 @@ The RTS smoothing (pink line) removes most of the remaining noise.
 But the filter certainly has some flaws.
 Let's look at another section of the same run farther from downtown where there's less noise in the GPS signal:
 
-![](noisy_run_filter_2.png)
+<figure>
+<img src="noisy_run_filter_2.png">
 <figcaption>
     A different section of the same run in an area with less GPS noise.
     I ran from <b>lower right to upper left</b> in this section.
 </figcaption>
+</figure>
 
 The raw track looks good here—the points follow the roads and alleys pretty closely, and no points stand out as obvious outliers.
 Ideally, the filter should identify that there is little noise and only make small adjustments to the raw measurements.
@@ -213,11 +221,13 @@ Here's the landing page of the app before you log in:
 
 And here's the same page after you log in with Strava:
 
-![](flask_app_logged_in.png)
+<figure>
+<img src="flask_app_logged_in.png">
 <figcaption>
   Yikes—sorry for the ugly UI.
   It took me so long to figure out the OAuth flow that I didn't have time to make the app prettier.
 </figcaption>
+</figure>
 
 The app uses the Strava API to pull some information from your profile (like your name, profile picture, and overall stats) and your recently uploaded activities.
 If you select an activity and click "Go", it brings you to an activity page.

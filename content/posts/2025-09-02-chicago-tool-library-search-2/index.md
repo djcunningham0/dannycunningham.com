@@ -73,8 +73,10 @@ We made a small backend change and now you can get the same result by searching 
 Another problem we identified was that unavailable (Checked Out, On Hold, In Maintenance) items were often ranked above available copies of identical items.
 Recall this carpet cleaner example:
 
+<figure>
 <img src="carpet_cleaner_results.png" class="img-narrow" style="--img-width: 80%;">
 <figcaption>The "Available" one should be ranked first.</figcaption>
+</figure>
 
 That's not a relevance issue, but it is a suboptimal user experience.
 We should make it easy for the user to find tools that are relevant *and* available to be checked out.
@@ -96,12 +98,14 @@ This is, of course, just a partial fix.
 We're only breaking ties for items with identical `pg_search` relevance scores.
 An unavailable item will still be ranked above an available one if its score is a *tiny bit* higher, but it's a good start.
 
+<figure>
 <img src="availability_before_and_after.png">
 <figcaption>
   Search results for "drill" before and after using item status as a tiebreaker.
   The problem isn't fully solved, but now there are more available items near the top of the list.
   (Sorry about the missing thumbnails—this is from the dev environment.)
 </figcaption>
+</figure>
 
 ## Quick Win 4: Boosting known relevant results
 

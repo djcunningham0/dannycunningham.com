@@ -81,10 +81,12 @@ This problem is definitely relevant for the tool library.
 We know a lot of search results are poorly ranked, with highly relevant items appearing too far down in the results.
 For example, recall the ["table" example from Part 1]({{< relref "posts/2025-06-26-chicago-tool-library-search-1/#irrelevant-results" >}}):
 
+<figure>
 <img src="table_results_annotated.png" class="img-narrow" style="--img-width: 80%;">
 <figcaption>
   "Folding table" is the most relevant item, but it's less likely to be clicked (or even seen) because it's so far down in the results.
 </figcaption>
+</figure>
 
 How should we address position bias when inferring which items are relevant?
 One option is, when counting views and holds to calculate relevance scores, to apply extra weight if the item was far down in the list.
@@ -124,12 +126,14 @@ And it seems to work pretty well.
 I reviewed the output for some high-volume queries and the results are sensible.
 For example, here's the inferred list of relevant items for "table saw":
 
+<figure>
 <img src="table_saw_relevance_scores.png">
 <figcaption>
   Relevance scores the "table saw" query.
   The top three items are clearly the most relevant.
   Some of the top search results for this query (e.g., "table saw pushblock" with median position 2) are not very relevant according to this methodology.
 </figcaption>
+</figure>
 
 Now it's straightforward to use those relevance scores (the `normalized_score` column from the table above) to calculate NDCG.
 For each search result from a query, we pass in its relevance score (or 0 if it has no score) and perform the NDCG calculation[^2].

@@ -54,15 +54,19 @@ If the embeddings from the language model do a good job of capturing semantic me
 Semantic search excels in some scenarios where traditional retrieval methods struggle, such as when there is no keyword match.
 For example, a keyword search can't identify that a search for "car accidents" is related to "traffic crashes", but semantic search can.
 
-!["car accidents" keyword search returns no results](car_accidents_keyword_search.png)
+<figure>
+<img src="car_accidents_keyword_search.png" alt="&quot;car accidents&quot; keyword search returns no results">
 <figcaption>
     A keyword search for "car accidents" on the Chicago Data Portal returns no results...
 </figcaption>
+</figure>
 
-!["car accidents" semantic search correctly finds "traffic crashes" results](car_accidents_semantic_search.png)
+<figure>
+<img src="car_accidents_semantic_search.png" alt="&quot;car accidents&quot; semantic search correctly finds &quot;traffic crashes&quot; results">
 <figcaption>
     ... but a semantic search correctly finds "traffic crashes" datasets.
 </figcaption>
+</figure>
 
 These days, implementing semantic search is easier than it might sound.
 I chose to use the [SentenceTransformers Python library](https://sbert.net), which provides a convenient API for accessing a bunch of pretrained models suitable for creating embeddings[^2].
@@ -105,10 +109,12 @@ They had some inventory issues that caused a delay, and to make up for it they s
 Pretty cool!
 Here's a bad photo of me wearing the hoodie:
 
+<figure>
 <img src="bad_photo_of_me.png" class="img-narrow" style="--img-width: 67%;" alt="me wearing the Streamlit hoodie">
 <figcaption>
     I look like a dork but I like the hoodie!
 </figcaption>
+</figure>
 
 
 [^1]: I used the [sodapy](https://github.com/afeld/sodapy) package to interact with the Socrata API, which simplified my implementation.

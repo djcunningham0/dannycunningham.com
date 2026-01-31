@@ -166,11 +166,13 @@ I didn't do any extra work to generate the following charts; I simply ran the Op
 Since we performed a multi-objective optimization (maximizing more than one metric), Optuna finds the Pareto frontier.
 Any solution on the Pareto frontier could be chosen as optimal, depending on which objective you want to prioritize.
 
+<figure>
 <img src="pareto_frontier.png">
 <figcaption>
     A scatter chart showing each trial's performance on both objectives.
     The red points fall on the Pareto frontier.
 </figcaption>
+</figure>
 
 Another useful visual is the parallel coordinate chart.
 This one can help uncover insights about which combinations of parameters tend to produce good results.
@@ -178,10 +180,12 @@ In our case (see the chart below), we can see the following relationships:
 * The weight for the `other_names` column needs to be high (either A or B) to achieve good results
 * Either value of `cover_density` (true or false) can produce good results, but it must be paired with a compatible value of `tsearch_weight`
 
+<figure>
 <img src="parallel_coordinate.png">
 <figcaption>
     Parallel coordinate chart from the Optuna dashboard.
 </figcaption>
+</figure>
 
 ### Spot checking the results
 
@@ -193,11 +197,13 @@ I wanted to check two things for any given set of parameters:
 As I've written [multiple]({{< relref "posts/2025-09-20-electrolyte-app/" >}}) [times]({{< relref "posts/2023-08-03-streamlit-hackathon/" >}}) [before]({{< relref "posts/2022-09-06-ffb-defense-scoring/" >}}), I'm a sucker for a Streamlit web app, so I built one to subjectively evaluate the top-performing parameter sets.
 First, I added a page where you can execute a query using any set of parameters and see the results:
 
+<figure>
 <img src="streamlit_search_results.png">
 <figcaption>
     The "pg_search" column emulates the behavior of the real tool library app, showing the search results that would be returned with the specified settings.
     (The other columns are a sneak peek of a possible future blog post.)
 </figcaption>
+</figure>
 
 Then a page that calculates NDCG@*k* for any set of queries, any number of search configurations, and various *k* values:
 
