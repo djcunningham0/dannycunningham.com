@@ -63,12 +63,14 @@ I built an app that allowed the user to input their desired scoring settings and
 The app keeps track of how scores and outcomes would have changed and then displays all of the relevant information and some useful visualizations to the user.
 I think it's pretty cool!
 
-![](app_screenshot_1.png)
+<figure>
+<img src="app_screenshot_1.png">
 <figcaption>
 Screenshot from the Streamlit app.
 With the settings in this example, you can see that average scores would increase a few points and about 3% of matchups would change outcome.
 Lower down, the app also shows exactly which matchups would be affected and whether they would impact the league standings.
 </figcaption>
+</figure>
 
 Another cool thing about Streamlit is that it's easy to deploy and share an app.
 You can host an app for free at [streamlit.io/cloud](https://streamlit.io/cloud) and anyone with the link can access it.

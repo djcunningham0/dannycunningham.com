@@ -17,8 +17,10 @@ The tool library uses a homegrown software application called Circulate, origina
 Circulate lets members browse the library's inventory, reserve items, and schedule appointments, and it allows librarians to manage inventory and perform admin tasks.
 You can check it out at [app.chicagotoollibrary.org](https://app.chicagotoollibrary.org/) (and if you live in Chicago, consider clicking the "Become a member" button 😊).
 
+<figure>
 <img src="circulate_inventory.png">
 <figcaption>Inventory page from Circulate.</figcaption>
+</figure>
 
 Circulate is written in Ruby on Rails, which is... not my forte.
 Fortunately the software volunteer team has a few Ruby on Rails all-stars who have helped me learn (slowly).
@@ -31,8 +33,10 @@ One of the main purposes of Circulate is to allow members to browse the library'
 As such, the app includes a search box where users can search for tools by name.
 For example, if I search for "circular saw" I get these results:
 
+<figure>
 <img src="circular_saw_results.png" class="img-narrow" style="--img-width: 80%;">
 <figcaption>Search results for "circular saw". Looks pretty good!</figcaption>
+</figure>
 
 Those results look pretty good!
 The top five results are circular saws, so they're relevant to my search.
@@ -69,8 +73,10 @@ They all at least have "table" in the name.
 But they're probably not what I'm looking for when I search for "table".
 I'm much more likely looking for something like this:
 
+<figure>
 <img src="folding_table.png">
 <figcaption>Now that's what I call "table"!</figcaption>
+</figure>
 
 The folding table should be the first result.
 It's actually a table; the earlier results just include "table" as a descriptor in their names.
@@ -99,21 +105,25 @@ We're not sure exactly what the user wants so we should return a variety of item
 Diversity is a bit of a mixed bag in Circulate.
 For some searches, such as "gardening", the results are pretty diverse:
 
+<figure>
 <img src="gardening_results.png" class="img-narrow" style="--img-width: 80%;">
 <figcaption>
     An example of good diversity.
     The first 6 results are all distinct items and they're all relevant to the query.
     (They're maybe not the *most* relevant items, but the diversity is good.)
 </figcaption>
+</figure>
 
 But the results for "saw" are a different story:
 
+<figure>
 <img src="saw_results.png" class="img-narrow" style="--img-width: 80%;">
 <figcaption>
     Not so good diversity.
     All of the top results are reciprocating saws.
     Where are the circular saws, miter saws, hand saws, and so on?
 </figcaption>
+</figure>
 
 Setting aside the fact that the first result is not very relevant (it's an accessory, not a saw), these results are just OK.
 Reciprocating saws are relevant to the search, so it's good that we retrieved them.

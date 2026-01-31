@@ -106,13 +106,14 @@ Claude parametrized the inputs much more intuitively: you enter your target nutr
 That parametrization made the app easier to use *and* it made the code easier to understand.
 There were other cases where I preferred my own design decisions to Claude's, but that's fine—it was useful to see multiple possible implementations so I could choose the best one.
 
-![](combined_screenshot.png)
-
+<figure>
+<img src="combined_screenshot.png">
 <figcaption>
     Evolution of the Streamlit app.
     The design of the final app clearly combines elements from both earlier versions.
     It felt like a collaboration with Claude.
 </figcaption>
+</figure>
 
 
 ### The bad
