@@ -4,11 +4,7 @@ subtitle = "Identifying the problem(s)"
 date = 2025-06-26
 tags = ["data analysis", "information retrieval", "chicago tool library"]
 draft = false
-description = """
-    An overview of the Chicago Tool Library's web app and common problems with its search functionality.
-    Not talking solutions yet, just seeing what types of problems exist.
-    Plus, some constraints and limitations of a volunteer project with a shoestring budget.
-"""
+description = "An overview of the Chicago Tool Library's web app and common problems with its search functionality. Not talking solutions yet, just seeing what types of problems exist. Plus, some constraints and limitations of a volunteer project with a shoestring budget."
 +++
 
 For the past couple years I've volunteered with the [Chicago Tool Library](https://www.chicagotoollibrary.org), one of my favorite organizations in the city.

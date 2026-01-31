@@ -9,7 +9,7 @@
             {{ with .Params.subtitle }}
             <p class="post-subtitle">{{ . }}</p>
             {{ end }}
-            <p class="post-excerpt">{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+            <p class="post-excerpt">{{ with .Params.description }}{{ . | markdownify }}{{ else }}{{ .Summary }}{{ end }}</p>
         </div>
         {{ end }}
     </div>
