@@ -41,3 +41,18 @@ description = "SEO/sharing description"
 ```
 
 Set `draft = false` to publish.
+
+## Image Formatting
+
+Images with captions must be wrapped in `<figure>` tags for the lightbox to display captions correctly:
+
+```html
+<figure>
+<img src="image.png">
+<figcaption>Caption text here.</figcaption>
+</figure>
+```
+
+Note: `<figcaption>` for code blocks or tables doesn't need `<figure>` tags (the lightbox only affects images).
+
+Run `./scripts/check-figure-tags.sh` to find any image captions missing a `<figure>` wrapper.
