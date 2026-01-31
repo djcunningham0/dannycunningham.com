@@ -2,9 +2,9 @@
 title = "Vibe coding a web app"
 subtitle = "How good are the latest and greatest LLM agents?"
 date = 2025-09-20
-tags = ["streamlit", "web apps", "ai", "llms"]
+tags = ["streamlit", "web apps", "AI", "LLMs", "vibe coding"]
 draft = false
-description = "I built a simple Streamlit web app for a DIY electrolyte mix recipe. Embracing the \"vibe coding\" lifestyle, I decided to let a Claude agent do most of the work for me. Here's how it went. (Spoiler: pretty good but far from perfect)"
+description = "I built a simple Streamlit web app for a DIY electrolyte mix recipe. Embracing the \"vibe coding\" lifestyle, I decided to let a GitHub Copilot agent do most of the work for me. Here's how it went. (Spoiler: pretty good but far from perfect)"
 +++
 
 Last year I made a recipe for a homemade electrolyte mix which I use for endurance exercise like runs, hikes, and bike rides.
@@ -23,7 +23,7 @@ Let's give that a shot!
 
 I asked the LLM agent to build a Streamlit app from scratch.
 It likely would have been faster to start with my existing app and ask it to modify it, but I wanted to see how well it would do writing all of the code itself (although later on I did show it a few bits of my original code to add some specific functionality).
-I decided to use Anthropic's **Claude Sonnet**[^2] in agent mode.
+I used the GitHub Copilot VS Code plugin, and I decided to use Anthropic's **Claude Sonnet model**[^2] in agent mode.
 
 Here's the prompt I gave it[^3]:
 
