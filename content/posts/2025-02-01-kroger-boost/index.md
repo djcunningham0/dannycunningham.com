@@ -132,6 +132,13 @@ Boost is surely worth it if you regularly use delivery, as it removes the $7 del
 But beware: Kroger hopes Boost will encourage you to place more delivery orders because they think you'll spend more (trust me, I used to work there)[^6].
 Just something to be mindful of!
 
+---
+
+## February 2026 update
+My membership is up for renewal again.
+It's now *$69 per year*, and Kroger recently removed the option to redeem fuel points for cash back on groceries (at least in my area).
+I now get almost no value from Boost, so I am not renewing this year.
+
 
 [^1]: Technically I worked for 84.51&deg;, a subsidiary of Kroger.
 
