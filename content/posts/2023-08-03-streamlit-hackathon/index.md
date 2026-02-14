@@ -2,7 +2,7 @@
 title = "Streamlit Hackathon: Exploring Chicago Datasets"
 subtitle = "I couldn't pass up an opportunity for some Streamlit swag!"
 date = 2023-08-03
-tags = ["streamlit", "hackathon", "information retrieval", "semantic search"]
+tags = ["streamlit", "hackathon", "information retrieval", "semantic search", "web apps"]
 draft = false
 description = "Streamlit is hosting a hackathon to show off their new connections functionality. I built a simple app implementing semantic search to explore public datasets in the city of Chicago's Socrata open data platform."
 +++
@@ -10,8 +10,9 @@ description = "Streamlit is hosting a hackathon to show off their new connection
 Streamlit is hosting the [Streamlit Connections hackathon](https://discuss.streamlit.io/t/connections-hackathon/47574).
 As I've [previously mentioned]({{< relref "posts/2022-09-06-ffb-defense-scoring" >}}), I'm a big fan of Streamlit so I decided to enter.
 The hackathon rules are:
-* Use the new [`st.connection`](https://docs.streamlit.io/develop/api-reference/connections/st.connection) functionality to build a connection to any data source or API.
-* Build a Streamlit app that showcases its functionality.
+
+- Use the new [`st.connection`](https://docs.streamlit.io/develop/api-reference/connections/st.connection) functionality to build a connection to any data source or API.
+- Build a Streamlit app that showcases its functionality.
 
 Pretty simple!
 And everyone who enters gets a free Streamlit hoodie.
@@ -21,18 +22,20 @@ How could I pass that up!?
 
 I decided to connect to the [Chicago Data Portal](https://data.cityofchicago.org), which is accessible via the [Socrata API](https://dev.socrata.com).
 I chose this connection for a few reasons:
+
 1. I live in Chicago.
 2. I already had some familiarity with the API (I previously used it to access [traffic crash data]({{< relref "posts/2023-01-10-suv-pedestrian-safety" >}})).
-3. There are *a lot* of datasets available in the portal.
-It feels like there's an opportunity to build something useful to improve data discoverability.
+3. There are _a lot_ of datasets available in the portal.
+   It feels like there's an opportunity to build something useful to improve data discoverability.
 
 I decided to build an app that would help a user find relevant datasets in the Chicago Data Portal.
 
 ## Building the app
 
 You can see the app I submitted here:
-* [Live app](https://djcunningham0-connections-hackathon-socrata.streamlit.app) (this might break eventually)
-* [Source code](https://github.com/djcunningham0/streamlit-connections-hackathon-socrata)
+
+- [Live app](https://djcunningham0-connections-hackathon-socrata.streamlit.app) (this might break eventually)
+- [Source code](https://github.com/djcunningham0/streamlit-connections-hackathon-socrata)
 
 ### Connecting to the Socrata API
 
@@ -104,8 +107,8 @@ That was my submission to the hackathon—go [check out my app](https://djcunnin
 It has the semantic search functionality I described above, plus a few visualizations of some COVID-19 and speed camera datasets as examples of how you might use some of the data.
 It was fun to build!
 
-***UPDATE:*** I received my Streamlit swag!
-They had some inventory issues that caused a delay, and to make up for it they sent me a hoodie *and* a tumbler.
+**_UPDATE:_** I received my Streamlit swag!
+They had some inventory issues that caused a delay, and to make up for it they sent me a hoodie _and_ a tumbler.
 Pretty cool!
 Here's a bad photo of me wearing the hoodie:
 
@@ -116,9 +119,9 @@ Here's a bad photo of me wearing the hoodie:
 </figcaption>
 </figure>
 
-
 [^1]: I used the [sodapy](https://github.com/afeld/sodapy) package to interact with the Socrata API, which simplified my implementation.
 
-[^2]: Specifically, these are pretrained *transformer* models, hence the name of the library.
-Transformers are all the rage right now in the deep learning and AI community.
-For an overview check out one of the many explainers online (like [this one](https://blogs.nvidia.com/blog/what-is-a-transformer-model/)), or if you're really motivated check out Google's landmark 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762).
+[^2]:
+    Specifically, these are pretrained _transformer_ models, hence the name of the library.
+    Transformers are all the rage right now in the deep learning and AI community.
+    For an overview check out one of the many explainers online (like [this one](https://blogs.nvidia.com/blog/what-is-a-transformer-model/)), or if you're really motivated check out Google's landmark 2017 paper, [Attention Is All You Need](https://arxiv.org/pdf/1706.03762).
