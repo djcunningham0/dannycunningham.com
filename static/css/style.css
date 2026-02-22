@@ -126,6 +126,7 @@ a:hover {
 
 header nav {
     display: flex;
+    align-items: flex-end;
     gap: clamp(0.75rem, 2vw, 1.25rem);
     flex-wrap: wrap;
 }
@@ -149,57 +150,58 @@ header nav a:hover {
     padding: 0;
     display: flex;
     align-items: center;
-}
-
-.toggle-track {
-    width: 42px;
-    height: 24px;
-    background: #b8c8cf;
-    border-radius: 12px;
-    position: relative;
-    transition: background 0.25s ease;
     flex-shrink: 0;
 }
 
-[data-theme="dark"] .toggle-track {
-    background: var(--primary-color);
+.toggle-pill {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    background: #cdd8dc;
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.25s ease;
 }
 
-.toggle-knob {
+[data-theme="dark"] .toggle-pill {
+    background: #2e3340;
+}
+
+.toggle-indicator {
     position: absolute;
     top: 2px;
     left: 2px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background: #fff;
     border-radius: 50%;
     transition: transform 0.25s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme="dark"] .toggle-knob {
-    transform: translateX(18px);
+[data-theme="dark"] .toggle-indicator {
+    transform: translateX(24px);
+    background: #4a5068;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.toggle-knob svg {
-    width: 12px;
-    height: 12px;
-    color: #356a7c;
+.toggle-pill svg {
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    color: #7a96a0;
+    transition: color 0.2s ease;
 }
 
-.toggle-knob .icon-moon {
-    display: none;
+:not([data-theme="dark"]) .toggle-pill .icon-sun {
+    color: var(--primary-color);
 }
 
-[data-theme="dark"] .toggle-knob .icon-sun {
-    display: none;
-}
-
-[data-theme="dark"] .toggle-knob .icon-moon {
-    display: block;
+[data-theme="dark"] .toggle-pill .icon-moon {
+    color: #8ab4c8;
 }
 
 /* Override chroma backgrounds to use our code-bg variable */
