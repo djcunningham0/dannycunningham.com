@@ -7,7 +7,7 @@
 [data-theme="dark"] .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 [data-theme="dark"] .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
 [data-theme="dark"] .chroma .hl { background-color:#6e7681 }
-[data-theme="dark"] .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#737679 }
+[data-theme="dark"] .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681 }
 [data-theme="dark"] .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6e7681 }
 [data-theme="dark"] .chroma .line { display:flex; }
 [data-theme="dark"] .chroma .k { color:#ff7b72 }
@@ -20,7 +20,7 @@
 [data-theme="dark"] .chroma .nc { color:#f0883e;font-weight:bold }
 [data-theme="dark"] .chroma .no { color:#79c0ff;font-weight:bold }
 [data-theme="dark"] .chroma .nd { color:#d2a8ff;font-weight:bold }
-[data-theme="dark"] .chroma .ni { color:#ffa657 }
+[data-theme="dark"] .chroma .ni { color:#f0883e }
 [data-theme="dark"] .chroma .ne { color:#f0883e;font-weight:bold }
 [data-theme="dark"] .chroma .nl { color:#79c0ff;font-weight:bold }
 [data-theme="dark"] .chroma .nn { color:#e6edf3 }

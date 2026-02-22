@@ -27,7 +27,7 @@
 /* NameOther */ .chroma .nx { color:#1f2328 }
 /* NameTag */ .chroma .nt { color:#0550ae }
 /* NameBuiltin */ .chroma .nb { color:#6639ba }
-/* NameBuiltinPseudo */ .chroma .bp { color:#6a737d }
+/* NameBuiltinPseudo */ .chroma .bp { color:#6639ba }
 /* NameVariable */ .chroma .nv { color:#953800 }
 /* NameVariableClass */ .chroma .vc { color:#953800 }
 /* NameVariableGlobal */ .chroma .vg { color:#953800 }
@@ -48,7 +48,7 @@
 /* LiteralStringOther */ .chroma .sx { color:#0a3069 }
 /* LiteralStringRegex */ .chroma .sr { color:#0a3069 }
 /* LiteralStringSingle */ .chroma .s1 { color:#0a3069 }
-/* LiteralStringSymbol */ .chroma .ss { color:#032f62 }
+/* LiteralStringSymbol */ .chroma .ss { color:#0a3069 }
 /* LiteralNumber */ .chroma .m { color:#0550ae }
 /* LiteralNumberBin */ .chroma .mb { color:#0550ae }
 /* LiteralNumberFloat */ .chroma .mf { color:#0550ae }
