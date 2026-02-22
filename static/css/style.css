@@ -146,31 +146,59 @@ header nav a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.25rem;
-    color: var(--primary-color);
+    padding: 0;
     display: flex;
     align-items: center;
-    transition: color 0.2s ease;
 }
 
-.theme-toggle:hover {
-    color: var(--link-color);
+.toggle-track {
+    width: 42px;
+    height: 24px;
+    background: #b8c8cf;
+    border-radius: 12px;
+    position: relative;
+    transition: background 0.25s ease;
+    flex-shrink: 0;
 }
 
-.theme-toggle svg {
-    width: 1.2rem;
-    height: 1.2rem;
+[data-theme="dark"] .toggle-track {
+    background: var(--primary-color);
 }
 
-.theme-toggle .icon-moon {
+.toggle-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .toggle-knob {
+    transform: translateX(18px);
+}
+
+.toggle-knob svg {
+    width: 12px;
+    height: 12px;
+    color: #356a7c;
+}
+
+.toggle-knob .icon-moon {
     display: none;
 }
 
-[data-theme="dark"] .theme-toggle .icon-sun {
+[data-theme="dark"] .toggle-knob .icon-sun {
     display: none;
 }
 
-[data-theme="dark"] .theme-toggle .icon-moon {
+[data-theme="dark"] .toggle-knob .icon-moon {
     display: block;
 }
 
