@@ -29,9 +29,30 @@
             href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
             rel="stylesheet"
         />
+        <script>
+            (function() {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            })();
+        </script>
         <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/syntax-light.css" />
+        <link rel="stylesheet" href="/css/syntax-dark.css" />
         <script src="/js/footnotes.js" defer></script>
         <script src="/js/lightbox.js" defer></script>
+        <script defer>
+            document.addEventListener('DOMContentLoaded', function() {
+                var toggle = document.getElementById('theme-toggle');
+                if (!toggle) return;
+                toggle.addEventListener('click', function() {
+                    var current = document.documentElement.getAttribute('data-theme');
+                    var next = current === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', next);
+                    localStorage.setItem('theme', next);
+                });
+            });
+        </script>
     </head>
     <body>
         {{ partial "header.html" . }}
