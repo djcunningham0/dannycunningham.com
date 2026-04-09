@@ -103,6 +103,7 @@ You can hover[^4] over the quantity to see the conversion.
 <figcaption>
     Halving this recipe resulted in a measurment of "1/6 cup brown sugar".
     The tooltip shows the more useful measurement of "2 tbsp + 2 tsp".
+</figcaption>
 </figure>
 
 I really like this feature.
