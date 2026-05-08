@@ -2,7 +2,7 @@
 title = "Developing a Generalized Elo Rating System for Multiplayer Games"
 subtitle = "And using it to prove that I’m a terrible poker player"
 date = 2021-09-26
-tags = ["data analysis", "rankings", "web apps", "python", "poker"]
+tags = ["data analysis", "rankings", "web apps", "poker"]
 draft = false
 description = "Elo is a rating system for two-player games, such as chess. I developed a Python implementation of a generalized Elo system that works for multiplayer games. Then I built a web app to track the Elo ratings of my friend group's poker games. At the risk of personal embarrassment, I'm publishing the results."
 +++

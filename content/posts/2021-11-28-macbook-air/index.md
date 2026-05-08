@@ -2,7 +2,7 @@
 title = "Why I Chose the MacBook Air over the MacBook Pro as a Data Scientist"
 subtitle = "Benchmark tests and other considerations to help you decide between the latest and greatest Apple laptops"
 date = 2021-11-28
-tags = ["apple", "data science"]
+tags = ["Apple"]
 draft = false
 description = "I recently replaced my old laptop. Despite looking forward to the release of the new MacBook Pro for years, I opted for the MacBook Air instead. Why? It offers good performance and much better value. Most people (but not everyone) should probably make the same choice."
 +++

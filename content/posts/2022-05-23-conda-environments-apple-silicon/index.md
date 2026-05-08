@@ -2,7 +2,7 @@
 title = "How to Manage Conda Environments on an Apple Silicon M1 Mac"
 subtitle = "Manage both ARM64 and x86 Python environments using conda"
 date = 2022-05-23
-tags = ["python", "environment management"]
+tags = ["environment management"]
 draft = false
 description = "A basic tutorial for managing Python environments using conda (for those who don't like pyenv, or when pyenv isn't sufficient)."
 +++

@@ -2,7 +2,7 @@
 title = "Should I Renew My Kroger Boost Membership?"
 subtitle = "Running the numbers to see if it's worth it"
 date = 2025-02-01
-tags = ["data analysis", "money", "kroger"]
+tags = ["data analysis", "money", "Kroger"]
 draft = false
 description = "My previous job gave me a free Kroger Boost membership. Now that membership is expiring. Is it worth renewing for $59?"
 +++

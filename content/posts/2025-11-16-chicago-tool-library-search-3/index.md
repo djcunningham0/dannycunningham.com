@@ -2,7 +2,7 @@
 title = "Tool Library Search Improvements: Part 3"
 subtitle = "Quantifying the problem"
 date = 2025-11-16
-tags = ["data analysis", "information retrieval", "chicago tool library"]
+tags = ["data analysis", "information retrieval", "Chicago Tool Library"]
 draft = false
 description = """
   Subjective analysis can only take us so far.

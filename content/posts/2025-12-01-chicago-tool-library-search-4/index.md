@@ -2,7 +2,7 @@
 title = "Tool Library Search Improvements: Part 4"
 subtitle = "Tuning the search implementation for optimal performance"
 date = 2025-12-01
-tags = ["data analysis", "information retrieval", "chicago tool library"]
+tags = ["data analysis", "information retrieval", "Chicago Tool Library"]
 draft = false
 description = """
   Let's (finally) make some broad changes to the tool library's search configuration.

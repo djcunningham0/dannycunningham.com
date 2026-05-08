@@ -2,7 +2,7 @@
 title = "Vibe coding a web app"
 subtitle = "How good are the latest and greatest LLM agents?"
 date = 2025-09-20
-tags = ["streamlit", "web apps", "AI", "LLMs", "vibe coding"]
+tags = ["Streamlit", "web apps", "AI", "LLMs", "vibe coding"]
 draft = false
 description = "I built a simple Streamlit web app for a DIY electrolyte mix recipe. Embracing the \"vibe coding\" lifestyle, I decided to let a GitHub Copilot agent do most of the work for me. Here's how it went. (Spoiler: pretty good but far from perfect)"
 +++

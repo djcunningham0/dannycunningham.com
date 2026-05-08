@@ -1,7 +1,7 @@
 +++
 title = "Using FastAPI to Recreate the Flask Tutorial"
 date = 2021-11-08
-tags = ["coding", "web apps", "learning", "flask", "fastapi"]
+tags = ["web apps", "Flask", "FastAPI"]
 draft = false
 description = "I wanted to try out the popular FastAPI framework. As a learning exercise, I reproduced a simple Flask tutorial using FastAPI."
 +++

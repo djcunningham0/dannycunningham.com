@@ -2,7 +2,7 @@
 title = "Tool Library Search Improvements: Part 2"
 subtitle = "Quick wins"
 date = 2025-09-02
-tags = ["data analysis", "information retrieval", "chicago tool library"]
+tags = ["data analysis", "information retrieval", "Chicago Tool Library"]
 draft = false
 description = """
   Now that we've identified some common problems, let's make the first steps toward solving them.

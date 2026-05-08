@@ -2,7 +2,7 @@
 title = "Are \"Hot Ones\" Viewers Sexist?"
 subtitle = "Maybe a little bit, according to text analysis of YouTube comments"
 date = 2019-08-16
-tags = ["data analysis", "nlp", "sentiment analysis"]
+tags = ["data analysis", "NLP"]
 draft = false
 description = "I analyzed the comments from episodes of the popular YouTube series \"Hot Ones\" and found some differences between episodes with male and female guests."
 +++

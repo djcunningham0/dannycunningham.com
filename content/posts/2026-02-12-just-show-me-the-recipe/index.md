@@ -2,7 +2,7 @@
 title = "Just Show Me the Recipe!"
 subtitle = "No fluff (unless the recipe calls for it)"
 date = 2026-02-12
-tags = ["web apps", "fastapi", "NLP"]
+tags = ["web apps", "FastAPI", "NLP"]
 draft = false
 description = """
   I'm tired of online recipes with the author's life story and tons of popup ads.

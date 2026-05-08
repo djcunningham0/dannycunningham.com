@@ -2,7 +2,7 @@
 title = "Strava Noise Reduction"
 subtitle = "Messing around with Kalman filters to fix noisy Strava activities"
 date = 2022-09-26
-tags = ["data science", "strava", "kalman filtering", "flask", "web apps"]
+tags = ["Strava", "Kalman filtering", "Flask", "web apps"]
 draft = false
 description = """
   I use Strava to track my runs, and sometimes I'm annoyed with how noisy the GPS tracks are.
