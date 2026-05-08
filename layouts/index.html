@@ -1,10 +1,26 @@
 {{ define "main" }}
+{{ $tagNames := dict }}
+{{ range (where .Site.RegularPages "Section" "posts") }}
+    {{ range .Params.tags }}
+        {{ $tagNames = merge $tagNames (dict (lower .) .) }}
+    {{ end }}
+{{ end }}
 <div class="home-layout">
     <aside class="sidebar">
         {{ with .Site.Params.profileImage }}
         <img src="{{ . }}" alt="{{ $.Site.Title }}" class="sidebar-photo">
         {{ end }}
         <p class="sidebar-intro">{{ .Site.Params.intro }}</p>
+        {{ with .Site.Taxonomies.tags }}
+        <div class="tags-desktop">
+            <div class="sidebar-tags">
+                <h3 class="sidebar-tags-heading">Tags</h3>
+                {{ range .Alphabetical }}
+                <a href="{{ .Page.RelPermalink }}" class="sidebar-tag">{{ index $tagNames .Term }} ({{ .Count }})</a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
     </aside>
     <div class="post-list">
         <h2>Recent Posts</h2>
@@ -19,5 +35,15 @@
         </div>
         {{ end }}
     </div>
+    {{ with .Site.Taxonomies.tags }}
+    <div class="tags-mobile">
+        <div class="sidebar-tags">
+            <h3 class="sidebar-tags-heading">Tags</h3>
+            {{ range .Alphabetical }}
+            <a href="{{ .Page.RelPermalink }}" class="sidebar-tag">{{ index $tagNames .Term }} ({{ .Count }})</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
 </div>
 {{ end }}
