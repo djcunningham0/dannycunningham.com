@@ -11,18 +11,18 @@ description = "I analyzed the comments from episodes of the popular YouTube seri
 <i>I originally wrote this post <a href="https://medium.com/@djcunningham0">on Towards Data Science</a> before moving it here.</i>
 </small>
 
-*Hot Ones*, "the show with hot questions and even hotter wings", has become something of a spectacle.
+_Hot Ones_, "the show with hot questions and even hotter wings", has become something of a spectacle.
 Since debuting four years ago in 2015, the YouTube interview show has grown steadily in popularity.
 I watched my first episode about nine months ago.
-Since then, *Hot Ones* has seemed to pop up in conversation every few weeks.
+Since then, _Hot Ones_ has seemed to pop up in conversation every few weeks.
 
-For those unfamiliar, *Hot Ones* host Sean Evans interviews one celebrity per episode.
-What differentiates *Hot Ones* from any other celebrity interview?
+For those unfamiliar, _Hot Ones_ host Sean Evans interviews one celebrity per episode.
+What differentiates _Hot Ones_ from any other celebrity interview?
 First, Sean is an excellent interviewer.
 Second, and most obviously, Sean and his guest eat a platter of increasingly spicy wings throughout the interview.
 It's highly entertaining—if you've never watched, I recommend checking out a recent episode on the [First We Feast YouTube channel](https://www.youtube.com/playlist?list=PLAzrgbu8gEMIIK3r4Se1dOZWSZzUSadfZ).
 
-Recently a friend of mine mentioned that *Hot Ones* episodes featuring women seem to get more sexist (or at least negative) comments than episodes featuring men.
+Recently a friend of mine mentioned that _Hot Ones_ episodes featuring women seem to get more sexist (or at least negative) comments than episodes featuring men.
 I was easily convinced that there's at least some truth to that claim.
 It's certainly not difficult to find some evidence—scroll through the most recent comments on an episode with a female guest and you'll easily find examples of sexist or objectifying comments.
 
@@ -32,7 +32,7 @@ Would it be possible to objectively show that female guests get more sexist or n
 
 ## Defining the objective
 
-There are a bunch of *Hot Ones* YouTube videos, some of which feature female guests.
+There are a bunch of _Hot Ones_ YouTube videos, some of which feature female guests.
 Each video has a bunch of comments.
 Our objective is to use statistics and data science to determine whether the comments for female guests differ from the comments for male guests in a way that can be described as sexist.
 Sounds straightforward enough, but...
@@ -61,13 +61,13 @@ The data and visualizations shown in this post can be found in a Jupyter noteboo
 
 ### Data overview
 
-The dataset contains all of the YouTube comments on the videos from the first eight *Hot Ones* seasons—a total of almost 139 videos and over 1 million total comments[^1].
+The dataset contains all of the YouTube comments on the videos from the first eight _Hot Ones_ seasons—a total of almost 139 videos and over 1 million total comments[^1].
 I split the dataset into two groups depending on whether there is a female guest in the video.
 That means videos with multiple guests would be included with the "female guest" group if one of the guests is a woman.
 
 In total, there are 23 videos with female guests and 116 without.
 That's a huge discrepancy!
-*Hot Ones* should probably try to get more female guests!
+_Hot Ones_ should probably try to get more female guests!
 (Women have been featured more often in recent seasons, but there still hasn't been a season with 50% women.)
 
 ### Sentiment analysis
@@ -82,7 +82,7 @@ Thus, if videos with female guests get a log of sexist comments, we would expect
 Let's briefly examine whether sentiment score is a reasonable proxy for sexism by looking at a few examples from the Chrissy Teigen episode.
 We'll start with the comment with the lowest sentiment score on this video. Coming in at a whopping **-0.997** sentiment score, we have this gem (with some censoring):
 
-> PLEASE DON'T EVER BRING A DISGUSTING UGLY SACK OF **** ON THIS SHOW AGAIN! WHY WOULD YOU BRING THAT CHIPMUNK LOOKING *** ***** ON HERE? SHE IS SO ANNOYING HER FACE IS HIDEOUS, HER VOICE IS HORRENDOUS, I PERSONALLY DON'T EVEN KNOW WHY SHE'S FAMOUS ASIDE FROM BEING MARRIED TO JL. I WISH THIS ***** WOULD ******* DIE YOU UGLY ******* ****! YOU ARE EXTREMELY DISGUSTING YOU ******* FAT HEADED SLUT WHORE ***** ****! DIE DIE DIE DIE DIE DIE DIE
+> PLEASE DON'T EVER BRING A DISGUSTING UGLY SACK OF \***_ ON THIS SHOW AGAIN! WHY WOULD YOU BRING THAT CHIPMUNK LOOKING _** **\*** ON HERE? SHE IS SO ANNOYING HER FACE IS HIDEOUS, HER VOICE IS HORRENDOUS, I PERSONALLY DON'T EVEN KNOW WHY SHE'S FAMOUS ASIDE FROM BEING MARRIED TO JL. I WISH THIS **\*** WOULD **\*\*\*** DIE YOU UGLY **\*\*\*** \***\*! YOU ARE EXTREMELY DISGUSTING YOU **\***** FAT HEADED SLUT WHORE **\*** \*\*\*\*! DIE DIE DIE DIE DIE DIE DIE
 
 Nice.
 I would classify that comment as blatantly sexist.
@@ -106,7 +106,7 @@ The sentiment analyzer disagrees, probably because of words like "savage", "kill
 
 So it appears sentiment analysis gives us a decent, but definitely flawed, way of finding sexist comments.
 Back to the question at hand.
-Is sexism prevalent in *Hot Ones* comments?
+Is sexism prevalent in _Hot Ones_ comments?
 Let's compute a "positive ratio" metric for each video, defined as the number of positive comments divided by the number of negative comments[^3].
 The following plot shows the distribution of positive ratio for videos featuring male and female guests, excluding Season 1 as an outlier[^4]:
 
@@ -123,7 +123,7 @@ A t-test can help us decide whether there's any meaningful difference between th
 The t-test will return a p-value, where values lower than 0.05 are traditionally considered statistically significant.
 In our case, the t-test results returns a p-value of 0.58, indicating that **we don't have a statistically significant difference between our groups.**
 
-In summary, basic sentiment analysis might show a *tiny* amount of evidence for sexism in *Hot Ones* video comments, but the evidence isn't anywhere near definitive.
+In summary, basic sentiment analysis might show a _tiny_ amount of evidence for sexism in _Hot Ones_ video comments, but the evidence isn't anywhere near definitive.
 
 ### Toxicity scores
 
@@ -196,16 +196,16 @@ The table below shows the top 30 words and bigrams associated with female and ma
 Take some time to read through those lists and see if you notice any interesting differences.
 Here are a few that I see:
 
-* The female list has a lot of words describing physical appearance like "beautiful", "cute", and "gorgeous".
+- The female list has a lot of words describing physical appearance like "beautiful", "cute", and "gorgeous".
   It's nice to see that the words are positive, but they can also be interpreted as objectifying. Commenters may be more likely to focus on women's physical appearance (notice how words like "handsome" aren't included for men).
-* There are a few negative words in the female list, notably "annoy".
-  If you read some comments on a *Hot Ones* video with a female guest, it won't take long to find a comment describing her as annoying, so I'm not surprised to see this one make the list.
-* There are a lot of curse words at the top of the male list.
+- There are a few negative words in the female list, notably "annoy".
+  If you read some comments on a _Hot Ones_ video with a female guest, it won't take long to find a comment describing her as annoying, so I'm not surprised to see this one make the list.
+- There are a lot of curse words at the top of the male list.
   I'm not quite sure what to make of this because context matters quite a bit for those words.
   A lot of those comments are presumably negative, but some of them might be inflating the male toxicity scores—those scores are unreliable when curse words are used in a positive context[^5].
-* The male list has a lot of variations of "best episode ever".
+- The male list has a lot of variations of "best episode ever".
   I think there's some implicit sexism here. On average, commenters seem biased in favor of episodes featuring men.
-* The male list has "funniest", "laugh", and even the 😂 emoji.
+- The male list has "funniest", "laugh", and even the 😂 emoji.
   This lines up with the cultural perception that men are funnier than women (which [probably isn't true](https://slate.com/human-interest/2011/10/study-shows-that-men-aren-t-funnier-than-women-but-that-people-generally-believe-that-they-are.html)).
 
 Let's take a deeper dive on that last bullet point.
@@ -216,45 +216,49 @@ The table below shows some "funny" bigrams[^7] and their corresponding z-scores 
     caption="Table 3: A deeper look at \"funny\" comments."
     >}}
 
-There have been plenty of funny women featured on *Hot Ones*, but it's clear that commenters, on average, find male guests to be funnier than female guests.
+There have been plenty of funny women featured on _Hot Ones_, but it's clear that commenters, on average, find male guests to be funnier than female guests.
 The model even associates "unfunny" and "not funny" with female guests.
 It's hard to prove, but I think there's a hint of sexism here.
 I doubt many commenters are intentionally proclaiming that men are funnier than women, but there does seem to be some subconscious bias.
 
 ## Conclusion
 
-So did we find evidence of sexism in *Hot Ones* comments?
+So did we find evidence of sexism in _Hot Ones_ comments?
 Sort of, but it's not overwhelming.
 Sentiment analysis and toxicity scores offer a tiny bit of evidence, but it can easily be dismissed as statistically insignificant.
 Word usage analysis illuminates some lexical differences between comments on male and female videos.
 Those differences seem a bit sexist, but they're also a open to interpretation.
 
-If pressed, I would say yes, there is evidence of sexism in *Hot Ones* comments.
+If pressed, I would say yes, there is evidence of sexism in _Hot Ones_ comments.
 I think the word usage analysis convincingly identifies a few sexist themes.
 Do you disagree?
 Am I falling victim to confirmation bias?
 
+[^1]:
+    Specifically, my dataset contains all comments before the date that I scraped them in the middle of May 2019.
+    I'm only including base-level comments, i.e., no replies to comments.
+    I also excluded a few videos from the analysis: the holiday special in season 2 (does not feature any guests), the Stephen Colbert Late Show episode (not on the _Hot Ones_ channel, so presumably a different audience), and the Mario Batali episode (not available on YouTube).
+    I wrote a Python script that accesses [this web scraper](http://ytcomments.klostermann.ca/) to pull the comment data (Google provides an API, but it's limited to 10,000 comments per day).
 
-
-[^1]: Specifically, my dataset contains all comments before the date that I scraped them in the middle of May 2019.
-I'm only including base-level comments, i.e., no replies to comments.
-I also excluded a few videos from the analysis: the holiday special in season 2 (does not feature any guests), the Stephen Colbert Late Show episode (not on the *Hot Ones* channel, so presumably a different audience), and the Mario Batali episode (not available on YouTube).
-I wrote a Python script that accesses [this web scraper](http://ytcomments.klostermann.ca/) to pull the comment data (Google provides an API, but it's limited to 10,000 comments per day).
-
-[^2]: I used the VADER sentiment analysis model, a rule-based model designed for social media text.
-Original paper is [here](http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf).
+[^2]:
+    I used the VADER sentiment analysis model, a rule-based model designed for social media text.
+    Original paper is [here](http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf).
 
 [^3]: The positive ratio metric is described in more detail in the [accompanying Jupyter notebook](https://github.com/djcunningham0/hot-ones-sexism-analysis/blob/master/data_for_writeup.ipynb).
 
-[^4]: Season 1 is excluded from this plot because I'm treating it as an outlier.
-See the [accompanying Jupyter notebook](https://github.com/djcunningham0/hot-ones-sexism-analysis/blob/master/data_for_writeup.ipynb) for justification.
+[^4]:
+    Season 1 is excluded from this plot because I'm treating it as an outlier.
+    See the [accompanying Jupyter notebook](https://github.com/djcunningham0/hot-ones-sexism-analysis/blob/master/data_for_writeup.ipynb) for justification.
 
-[^5]: For example, curse words almost always result in a high toxicity score even when there isn't really a toxic or hateful sentiment.
-See Table 7 in the [Gröndahl et al. paper](https://arxiv.org/pdf/1808.09115.pdf) mentioned previously.
+[^5]:
+    For example, curse words almost always result in a high toxicity score even when there isn't really a toxic or hateful sentiment.
+    See Table 7 in the [Gröndahl et al. paper](https://arxiv.org/pdf/1808.09115.pdf) mentioned previously.
 
-[^6]: For sentiment score we used the positive ratio metric because the majority of comments were scored with exactly neutral sentiment (score = 0).
-We don't have the same issue with toxicity scores so it's simpler to use average toxicity score as our evaluation metric.
+[^6]:
+    For sentiment score we used the positive ratio metric because the majority of comments were scored with exactly neutral sentiment (score = 0).
+    We don't have the same issue with toxicity scores so it's simpler to use average toxicity score as our evaluation metric.
 
-[^7]: The lists are very lightly edited to give a better sample of words.
-I didn't shuffle the lists at all, but I did remove some words that were very similar to others that appeared higher in the list.
-The full results are available [on GitHub](https://github.com/djcunningham0/hot-ones-sexism-analysis/tree/master/data).
+[^7]:
+    The lists are very lightly edited to give a better sample of words.
+    I didn't shuffle the lists at all, but I did remove some words that were very similar to others that appeared higher in the list.
+    The full results are available [on GitHub](https://github.com/djcunningham0/hot-ones-sexism-analysis/tree/master/data).

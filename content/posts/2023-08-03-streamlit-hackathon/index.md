@@ -2,7 +2,7 @@
 title = "Streamlit Hackathon: Exploring Chicago Datasets"
 subtitle = "I couldn't pass up an opportunity for some Streamlit swag!"
 date = 2023-08-03
-tags = ["Streamlit", "hackathon", "information retrieval", "semantic search", "web apps"]
+tags = ["Streamlit", "hackathon", "information retrieval", "semantic search", "web apps", "projects"]
 draft = false
 description = "Streamlit is hosting a hackathon to show off their new connections functionality. I built a simple app implementing semantic search to explore public datasets in the city of Chicago's Socrata open data platform."
 +++

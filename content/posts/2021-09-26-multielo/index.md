@@ -2,7 +2,7 @@
 title = "Developing a Generalized Elo Rating System for Multiplayer Games"
 subtitle = "And using it to prove that I’m a terrible poker player"
 date = 2021-09-26
-tags = ["data analysis", "rankings", "web apps", "poker"]
+tags = ["data analysis", "rankings", "web apps", "poker", "projects"]
 draft = false
 description = "Elo is a rating system for two-player games, such as chess. I developed a Python implementation of a generalized Elo system that works for multiplayer games. Then I built a web app to track the Elo ratings of my friend group's poker games. At the risk of personal embarrassment, I'm publishing the results."
 +++
@@ -34,10 +34,10 @@ Poker was one of our quarantine hobbies during the COVID-19 pandemic.
 Once a week or so we'd hop on a video call, chip in a few dollars each, and play poker for a few hours.
 It was a good way to have socially distanced fun, but there was one big problem: I'm not a good poker player.
 That's what I thought at the beginning, anyway, but I quickly realized I was wrong.
-I am a *terrible* poker player.
+I am a _terrible_ poker player.
 
 Fortunately for you, dear reader, I'm also a big nerd who likes to bring math into his hobbies.
-I wasn't satisfied knowing I was a terrible poker player; I wanted to quantify precisely *how* terrible I was.
+I wasn't satisfied knowing I was a terrible poker player; I wanted to quantify precisely _how_ terrible I was.
 So I developed a simple extension to the standard Elo rating system.
 
 ## How Elo works
@@ -48,7 +48,7 @@ Let's start by understanding how standard Elo works with two players. There are 
 2. **Actual score:** observe the outcome.
 3. **Update:** increase or decrease each player's rating based on result.
 
-Let's look at each step in a little more detail. To predict which player will win, we plug the each player's current rating into a simple logistic function. Suppose we have Players *A* and *B*, with ratings \(R_A\) and \(R_B\), respectively. Then the "expected score" for Player A is
+Let's look at each step in a little more detail. To predict which player will win, we plug the each player's current rating into a simple logistic function. Suppose we have Players _A_ and _B_, with ratings \(R_A\) and \(R_B\), respectively. Then the "expected score" for Player A is
 
 <figure>
   $$
@@ -95,7 +95,7 @@ It's common to set \(K\) to some fixed value, like \(K = 32\), or some systems w
 
 Sometimes it's helpful to walk through an example.
 Suppose Player A starts with a rating of 1200 and Player B starts with a rating of 1000, and suppose Player A wins the game.
-The equations above tell us that Player A's expected score is \(E_A = 0.76\), actual score is \(S_A = 1\), and new rating is \(R'_A = 1207.7\).
+The equations above tell us that Player A's expected score is \(E_A = 0.76\), actual score is \(S_A = 1\), and new rating is \(R'\_A = 1207.7\).
 (I used \(D = 400\) and \(K = 32\) in this example.)
 
 ## Extending Elo to multiplayer games
@@ -150,16 +150,16 @@ Should \(s_1 = 1\), or should \(s_1 + \dots + s_N = 1\)?
 Should the values increase linearly from one place to the next, or should they have some other relationship?
 I came up with a few conditions the scores should satisfy:
 
-* The scores must be monotonically decreasing.
+- The scores must be monotonically decreasing.
   That is, 1st place has a higher score than 2nd, which has a higher score than 3rd, and so on.
-* Last place must have a score of 0.
+- Last place must have a score of 0.
   A last-place finish should never improve a player's rating.
-* The scores must sum to 1 across all players.
+- The scores must sum to 1 across all players.
   This way they are on the same scale as the expected scores that we defined above.
 
 Those rules seem sensible, but there's still more than one way to assign scores that satisfy them for \(N \ge 3\) players—in fact, there are infinitely many ways!
 But that flexibility is actually a good thing for our rating system.
-Let's call any function that satisfies our three rules a *score function*.
+Let's call any function that satisfies our three rules a _score function_.
 Consider the following two score functions, which we'll call the "linear" and "exponential" score functions:
 
 <figure>
@@ -274,8 +274,8 @@ I created that chart by calculating each player's new Elo rating at the end of e
 Each player starts at 1000 (an arbitrary value) and then moves up or down depending on their results.
 The change in a player's rating after each game depends on where they finished and which other players were involved.
 
-*[Poker fans: one thing to note is that we played tournament style games, so it's always clear who finished first, second, third, and so on.
-This type of rating system couldn't be applied as easily if we were playing cash games instead, where there aren't necessarily clear winners and losers at the end of the game.]*
+_[Poker fans: one thing to note is that we played tournament style games, so it's always clear who finished first, second, third, and so on.
+This type of rating system couldn't be applied as easily if we were playing cash games instead, where there aren't necessarily clear winners and losers at the end of the game.]_
 
 ### Interactive web app
 

@@ -2,7 +2,7 @@
 title = "Strava Noise Reduction"
 subtitle = "Messing around with Kalman filters to fix noisy Strava activities"
 date = 2022-09-26
-tags = ["Strava", "Kalman filtering", "Flask", "web apps"]
+tags = ["Strava", "Kalman filtering", "Flask", "web apps", "projects"]
 draft = false
 description = """
   I use Strava to track my runs, and sometimes I'm annoyed with how noisy the GPS tracks are.
@@ -45,13 +45,14 @@ It's a great mix of theory and practical examples.
 A stats background is helpful, but it strikes me as fairly approachable even without it.
 
 I won't go into the full details (read the book for that), but I'll give a quick overview of the core concept.
-Kalman filters operate in two steps: a *prediction* step and an *update* step.
-First we *predict* what the next state will be based on the current state.
-Then we observe the next measurement and *update* our prediction accordingly.
+Kalman filters operate in two steps: a _prediction_ step and an _update_ step.
+First we _predict_ what the next state will be based on the current state.
+Then we observe the next measurement and _update_ our prediction accordingly.
 Then we repeat that process for each data point.
 
 Let's use the (simplified) Strava use case to illustrate.
 Suppose a runner is running across an (x, y) grid:
+
 1. Our latest measurement has the runner at (0, 0).
 2. **Prediction step:** our model predicts that the runner will be at (5, 2) at the next time increment.
 3. Measurement: our GPS records the runner at (4, 3) at the next time increment.
@@ -60,8 +61,8 @@ Suppose a runner is running across an (x, y) grid:
 
 If that sounds a bit like Bayesian statistics, that's because it is!
 Kalman filters are a type of Bayesian filter.
-In Bayesian terms, the prediction step produces a *prior*, the measurement is a *likelihood*, and the update step produces a *posterior.*
-I've obviously omitted a lot of details about *how* the Kalman filter performs the prediction and update, but the core concept should be pretty clear.
+In Bayesian terms, the prediction step produces a _prior_, the measurement is a _likelihood_, and the update step produces a _posterior._
+I've obviously omitted a lot of details about _how_ the Kalman filter performs the prediction and update, but the core concept should be pretty clear.
 
 <figure>
 <img src="simple_kf_diagram.png">
@@ -78,7 +79,7 @@ So Kalman filters can smooth noisy data.
 Sounds like a perfect solution for my noisy GPS tracks in Strava, right?
 Well, not so fast—there's one possible problem.
 
-Since my phone's GPS presumably already has a Kalman filter (or something similar), it's theoretically impossible to improve accuracy by applying *a second* Kalman filter directly to the output.
+Since my phone's GPS presumably already has a Kalman filter (or something similar), it's theoretically impossible to improve accuracy by applying _a second_ Kalman filter directly to the output.
 
 > Can you apply a Kalman filter to the output of a commercial Kalman filter?
 > ...
@@ -94,21 +95,22 @@ Well, that sounds kind of like what we're trying to do.
 Bummer.
 
 But before giving up, let's consider whether that blurb is actually relevant to our problem.
-The GPS in your phone is attempting to produce the best estimate of your current position *in real time.*
+The GPS in your phone is attempting to produce the best estimate of your current position _in real time._
 If we wanted to improve the real-time readings of our phone's GPS[^2], we'd be out of luck.
 
-But in the Strava use case, we're *not* solving a real-time problem.
+But in the Strava use case, we're _not_ solving a real-time problem.
 We have the full series of recorded GPS measurements from start to finish.
 That's important because it changes which data is available to our filter; specifically, we know what future measurements look like.
 Suppose we're attempting to remove noise from \(m_t\), the measurement at time \(t\):
-* Real-time use case: we have \(m_t\) and all previous measurements (\(m_{t-1}\), \(m_{t-2}\), ...).
-* Strava use case: we have \(m_t\), all previous measurements, *and all future measurements* (\(m_{t+1}\), \(m_{t+2}\), ...).
+
+- Real-time use case: we have \(m*t\) and all previous measurements (\(m*{t-1}\), \(m\_{t-2}\), ...).
+- Strava use case: we have \(m*t\), all previous measurements, *and all future measurements* (\(m*{t+1}\), \(m\_{t+2}\), ...).
 
 Can we make use of those future measurements in a Kalman filter?
 Yes!
-We can apply a concept called *smoothing*[^3].
+We can apply a concept called _smoothing_[^3].
 Smoothing filters incorporate future measurements to further remove noise from a time-series.
-Earlier we said it's impossible to improve upon one Kalman filter by applying a second one, but it *is* possible if the second filter has additional information that wasn't available to the first one.
+Earlier we said it's impossible to improve upon one Kalman filter by applying a second one, but it _is_ possible if the second filter has additional information that wasn't available to the first one.
 
 So, this was a long-winded way of saying **yes, a Kalman filter can (potentially) de-noise a Strava track.**
 Smoothing from future measurements will make it possible[^4].
@@ -122,11 +124,12 @@ I do not claim that this filter is a perfect model for our use case—it's not e
 But I think it's decent, at least for illustrative purposes.
 
 Here are the high-level components of my filter:
-* **First-order[^5] Kalman filter:**
+
+- **First-order[^5] Kalman filter:**
   The filter tracks position and velocity.
   It assumes velocity is roughly constant, and changes in velocity (acceleration) are treated as random noise.
   Most of my runs are at a steady pace, so the first-order filter should be appropriate.
-* **RTS smoothing:**
+- **RTS smoothing:**
   This smoothing approach takes the full series of measurements into account when making each estimate.
   In a sense, we’re running a Kalman filter both forward and backward on the data.
   Smoothing should help differentiate true changes in direction from random noise.
@@ -178,7 +181,7 @@ Ideally, the filter should identify that there is little noise and only make sma
 It does a good job smoothing out the waviness on straight sections, but it applies way too much smoothing around corners, rounding them out quite a bit.
 
 The big challenge was finding filter parameters that yielded good results on both sections of this run.
-This was *impossible* with the relatively simple filter I designed.
+This was _impossible_ with the relatively simple filter I designed.
 There are only a few parameters to tune in my filter (uncertainty and process noise), and no combination yields good results in all scenarios.
 You can tune it to perform well in high-noise sections or low-noise sections, but not both.
 
@@ -186,12 +189,13 @@ You can tune it to perform well in high-noise sections or low-noise sections, bu
 
 This project is certainly unfinished.
 Here are some ideas for improving the filter that I might try someday:
-* **Design a better filter.**
+
+- **Design a better filter.**
   For example, explore [adaptive filtering](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/14-Adaptive-Filtering.ipynb) to better account for changes in speed and direction and allow for varying noise levels throughout an activity.
-* **Quantitative evaluation.**
+- **Quantitative evaluation.**
   I mainly just checked whether the curves "looked good" qualitatively.
   We should analyze the model diagnostics (e.g., residual plots) and other metrics (e.g., check if max speed and acceleration are within physical limits).
-* **Address finer details.**
+- **Address finer details.**
   For example, Strava data has latitude/longitude coordinates but I treated them as x/y coordinates to simplify the code.
 
 ## Building an interactive Flask app
@@ -204,11 +208,11 @@ I decided to build a [Flask](https://flask.palletsprojects.com/en/stable/) app t
 You can find my code for the app [on GitHub](https://github.com/djcunningham0/strava-noise-reduction/tree/main) and ~~you can view the app [here](https://strava-noise-reduction.herokuapp.com)~~.
 (Please forgive me for the ugly, unpolished UI.)
 
-*UPDATE: sorry, the deployed app is no longer available because [Heroku discontinued their free tier](https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq) in November 2022.*
+_UPDATE: sorry, the deployed app is no longer available because [Heroku discontinued their free tier](https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq) in November 2022._
 
 ### OAuth integration with Strava
 
-I didn't want the app to work just with *my* Strava activities, but for anyone with a Strava account.
+I didn't want the app to work just with _my_ Strava activities, but for anyone with a Strava account.
 It's possible to do that using OAuth authentication.
 The "log in" button in my app redirects you to Strava, where you log into your account there, and then my app is granted access to read your Strava data[^6].
 It's pretty cool!
@@ -267,22 +271,24 @@ Despite the slightly sour ending note, this was a fun project!
 Kalman filtering is an interesting topic, and it's not too intimidating if you're willing to dive in.
 I only scratched the surface with the filter I implemented, so maybe I'll pick it back up someday.
 
-
-[^1]: That link brings you to the GitHub repo, where each book chapter has a corresponding Jupyter notebook.
-There's also a link to the PDF version in the repo's README.
+[^1]:
+    That link brings you to the GitHub repo, where each book chapter has a corresponding Jupyter notebook.
+    There's also a link to the PDF version in the repo's README.
 
 [^2]: An example of a real-time use case would be improving the accuracy of your real-time position in the Google Maps app.
 
 [^3]: For more details on smoothing, there's [a chapter](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/13-Smoothing.ipynb) about it in the Kalman and Bayesian Filters book.
 
-[^4]: Here's an example of how smoothing will help in the Strava use case.
-Suppose I run straight, then make a sharp left turn.
-When a real-time Kalman filter sees the first deviation from the straight line, it won't know whether it's a noisy measurement or a real direction change.
-But a smoothed filter sees future measurements, so it knows it's a real direction change.
+[^4]:
+    Here's an example of how smoothing will help in the Strava use case.
+    Suppose I run straight, then make a sharp left turn.
+    When a real-time Kalman filter sees the first deviation from the straight line, it won't know whether it's a noisy measurement or a real direction change.
+    But a smoothed filter sees future measurements, so it knows it's a real direction change.
 
-[^5]: The "order" of a Kalman filter refers to the number of derivatives of position in the model.
-A first-order filter models position and velocity (the first derivative of position).
-A second-order filter models position, velocity, and acceleration, and so on.
+[^5]:
+    The "order" of a Kalman filter refers to the number of derivatives of position in the model.
+    A first-order filter models position and velocity (the first derivative of position).
+    A second-order filter models position, velocity, and acceleration, and so on.
 
 [^6]: This OAuth flow is what allows websites to have a "Log in with Google/Facebook/etc." option.
 

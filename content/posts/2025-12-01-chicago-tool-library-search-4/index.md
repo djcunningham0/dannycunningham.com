@@ -2,7 +2,7 @@
 title = "Tool Library Search Improvements: Part 4"
 subtitle = "Tuning the search implementation for optimal performance"
 date = 2025-12-01
-tags = ["data analysis", "information retrieval", "Chicago Tool Library"]
+tags = ["data analysis", "information retrieval", "Chicago Tool Library", "projects"]
 draft = false
 description = """
   Let's (finally) make some broad changes to the tool library's search configuration.
@@ -35,6 +35,7 @@ pg_search_scope :search_by_anything,
   },
   using: {tsearch: {prefix: true, dictionary: "english"}}
 ```
+
 <figcaption>Our current `pg_search` configuration.</figcaption>
 
 The `pg_search` [documentation](https://github.com/Casecommons/pg_search?tab=readme-ov-file) shows quite a few configuration options we're not currently using.
@@ -48,6 +49,7 @@ sandpaper -> [s, sa, san, and, ndp, dpa, pap, ape, per, er, r]
 --> 13 distinct trigrams, 6 shared
 --> similarity = 6 / 13 = 0.46
 ```
+
 <figcaption>
     An example of trigram similarity with medium similarity.
 </figcaption>
@@ -64,19 +66,22 @@ Perhaps a combination of full text search and trigram search will outperform eit
 After a bit of research and exploration, I decided to tune the following parameters.
 
 **Full text search (tsearch):**
-* **Weights** (A, B, C, or D) for each of the 7 columns included in the search
-* **`prefix` parameter:** if true, return results for partial words (e.g., "tabl" would return results for "table")
-* **Ranking function:** full text search has "standard" and "cover density" options for calculating relevance.
-Cover density considers the proximity of matching lexemes[^2] (see [docs](https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-RANKING) for details).
+
+- **Weights** (A, B, C, or D) for each of the 7 columns included in the search
+- **`prefix` parameter:** if true, return results for partial words (e.g., "tabl" would return results for "table")
+- **Ranking function:** full text search has "standard" and "cover density" options for calculating relevance.
+  Cover density considers the proximity of matching lexemes[^2] (see [docs](https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-RANKING) for details).
 
 **Trigram:**
-* **`threshold` parameter:** retrieve items with a trigram similarity greater than this value
-* **`sort_only` parameter:** if false, use trigram search to retrieve additional items not returned by tsearch; otherwise, only use trigram scores for ranking
+
+- **`threshold` parameter:** retrieve items with a trigram similarity greater than this value
+- **`sort_only` parameter:** if false, use trigram search to retrieve additional items not returned by tsearch; otherwise, only use trigram scores for ranking
 
 **Shared:**
-* **tsearch weight:** use a weighted average of the tsearch score and the trigram score to rank results by relevance; this parameter will define what percentage of the weighted average comes from tsearch
 
-(*Note:* I also restricted trigram search to only look at the "name" field.
+- **tsearch weight:** use a weighted average of the tsearch score and the trigram score to rank results by relevance; this parameter will define what percentage of the weighted average comes from tsearch
+
+(_Note:_ I also restricted trigram search to only look at the "name" field.
 It did not perform well when allowed to look at all of the same columns as tsearch.)
 
 ## Implementing the parameter space
@@ -102,6 +107,7 @@ WHERE
   ) @@ to_tsquery('english', '<QUERY>:*')  -- :* enables prefix search
 ORDER BY rank DESC
 ```
+
 <figcaption>
     This PostgreSQL query is equivalent to our Ruby `pg_search_scope` definition above.
     It looks uglier, but it'll be easier to work with.
@@ -121,24 +127,25 @@ Our parameter space is too large for an exhaustive search over all possible comb
 One approach is a random search, but I often prefer to use an optimization approach.
 
 My preferred hyperparameter optimization tool is [Optuna](https://github.com/optuna/optuna), an automatic hyperparameter optimization framework.
-Optuna balances *exploration* and *exploitation*: it explores the full parameter space, but learns from previous trials and spends more time exploring promising regions.
+Optuna balances _exploration_ and _exploitation_: it explores the full parameter space, but learns from previous trials and spends more time exploring promising regions.
 I like Optuna compared to similar libraries for its friendly syntax, multi-objective support, and built-in visualizations[^3].
 
 You can see the script I used to optimize the tool library `pg_search` parameters [on GitHub](https://github.com/djcunningham0/ctl_search/blob/main/tune_pg_search.py), and I'll discuss some of the details below.
 
 ### Defining the objective function
 
-An important part of any parameter optimization is defining the *objective function* that you want to maximize (or minimize).
+An important part of any parameter optimization is defining the _objective function_ that you want to maximize (or minimize).
 Since Optuna can perform multi-objective optimization, I chose to define an objective function that maximizes two metrics:
-* **NDCG@3:** measure whether the most relevant items appear at the very top of the list
-* **NDCG@10:** measure whether the first page of results contains relevant items
 
-These two *k* values each capture an important aspect of good search results for the tool library use case.
+- **NDCG@3:** measure whether the most relevant items appear at the very top of the list
+- **NDCG@10:** measure whether the first page of results contains relevant items
+
+These two _k_ values each capture an important aspect of good search results for the tool library use case.
 
 ### Choosing a subset of queries
 
 We also need to decide which subset of queries to evaluate in our NDCG calculation.
-It's not feasible to include *every* query we've ever seen.
+It's not feasible to include _every_ query we've ever seen.
 Even if we could, we should focus our efforts on high-volume queries anyway—those queries have the biggest impact on user experience.
 
 With that in mind, I chose to evaluate on two subsets: the top 100 and top 50 most frequent queries in the historical search logs.
@@ -149,12 +156,14 @@ I let my hyperparameter script run for a couple hours, then came back to evaluat
 The bottom line is we **achieved our goal and improved NDCG** for our search results.
 
 **Current configuration:**
-* NDCG@3 = 0.63
-* NDCG@10 = 0.71
+
+- NDCG@3 = 0.63
+- NDCG@10 = 0.71
 
 **Best solutions:**
-* NDCG@3 = 0.72 **(+0.09)**
-* NDCG@10 = 0.77 **(+0.06)**
+
+- NDCG@3 = 0.72 **(+0.09)**
+- NDCG@10 = 0.77 **(+0.06)**
 
 Let's dive a little deeper to make sure the results stand up to some scrutiny.
 
@@ -177,8 +186,9 @@ Any solution on the Pareto frontier could be chosen as optimal, depending on whi
 Another useful visual is the parallel coordinate chart.
 This one can help uncover insights about which combinations of parameters tend to produce good results.
 In our case (see the chart below), we can see the following relationships:
-* The weight for the `other_names` column needs to be high (either A or B) to achieve good results
-* Either value of `cover_density` (true or false) can produce good results, but it must be paired with a compatible value of `tsearch_weight`
+
+- The weight for the `other_names` column needs to be high (either A or B) to achieve good results
+- Either value of `cover_density` (true or false) can produce good results, but it must be paired with a compatible value of `tsearch_weight`
 
 <figure>
 <img src="parallel_coordinate.png">
@@ -191,8 +201,9 @@ In our case (see the chart below), we can see the following relationships:
 
 We could simply choose a solution from the Pareto frontier, but it would be wise to do a sanity check.
 I wanted to check two things for any given set of parameters:
+
 1. Does it produce good subjective results on some common queries? (E.g., "drill", "table saw", etc.)
-2. Does it perform well on different query subsets and values of *k*?
+2. Does it perform well on different query subsets and values of _k_?
 
 As I've written [multiple]({{< relref "posts/2025-09-20-electrolyte-app/" >}}) [times]({{< relref "posts/2023-08-03-streamlit-hackathon/" >}}) [before]({{< relref "posts/2022-09-06-ffb-defense-scoring/" >}}), I'm a sucker for a Streamlit web app, so I built one to subjectively evaluate the top-performing parameter sets.
 First, I added a page where you can execute a query using any set of parameters and see the results:
@@ -205,7 +216,7 @@ First, I added a page where you can execute a query using any set of parameters 
 </figcaption>
 </figure>
 
-Then a page that calculates NDCG@*k* for any set of queries, any number of search configurations, and various *k* values:
+Then a page that calculates NDCG@_k_ for any set of queries, any number of search configurations, and various _k_ values:
 
 <img src="streamlit_search_metrics.png">
 
@@ -214,14 +225,15 @@ For a handful of high-scoring solutions from the optimization set, I spent some 
 ## Final decision
 
 I found a few interesting insights while reviewing the top-performing solutions:
-* Our current tsearch weights are pretty darn close to optimal.
-A few combinations performed slightly better, but not by much, and not consistently across different query subsets and *k* values.
-* We should keep `prefix=True` for tsearch.
-The overall metrics were similar with `prefix=False`, but it performed poorly for some very important queries such as "drill" and "saw".
-* Similarly, "cover density" ranking performed poorly on high-volume queries, so we should stick with standard `ts_rank`.
-* The optimal weighting for ranking is ~80% tsearch, ~20% trigram.
-* The trigram `sort_only` setting had minimal impact on NDCG.
-When `sort_only=False`, `threshold=0.3` strikes a good balance (too high doesn't retrieve any additional items; too low retrieves too many irrelevant items).
+
+- Our current tsearch weights are pretty darn close to optimal.
+  A few combinations performed slightly better, but not by much, and not consistently across different query subsets and _k_ values.
+- We should keep `prefix=True` for tsearch.
+  The overall metrics were similar with `prefix=False`, but it performed poorly for some very important queries such as "drill" and "saw".
+- Similarly, "cover density" ranking performed poorly on high-volume queries, so we should stick with standard `ts_rank`.
+- The optimal weighting for ranking is ~80% tsearch, ~20% trigram.
+- The trigram `sort_only` setting had minimal impact on NDCG.
+  When `sort_only=False`, `threshold=0.3` strikes a good balance (too high doesn't retrieve any additional items; too low retrieves too many irrelevant items).
 
 After considering all of those points... drumroll, please... I decided this is our **optimal `pg_search` configuration:**
 
@@ -263,11 +275,12 @@ I may or may not write a future post in this series.
 If I do, it'll explore alternative search methodologies, such as semantic search.
 Those methodologies may or may not be feasible to implement in the Chicago Tool Library project, but they'll be fun!
 
+[^1]:
+    The other technique implemented in `pg_search` is Double Metaphone, which is an algorithm for finding words that sound similar.
+    It performed poorly on our dataset in my initial exploration, so I didn't pursue it further.
 
-[^1]: The other technique implemented in `pg_search` is Double Metaphone, which is an algorithm for finding words that sound similar.
-It performed poorly on our dataset in my initial exploration, so I didn't pursue it further.
-
-[^2]: A lexeme is a unit of lexical meaning, sort of like a root word that has different forms.
-For example, "run" is the lexeme for "run", "runs", "ran", and "running".
+[^2]:
+    A lexeme is a unit of lexical meaning, sort of like a root word that has different forms.
+    For example, "run" is the lexeme for "run", "runs", "ran", and "running".
 
 [^3]: In my experience, Optuna is also better at finding optimal parameters than similar libraries (e.g., hyperopt).

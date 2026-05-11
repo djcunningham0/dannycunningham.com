@@ -2,7 +2,7 @@
 title = "Using Reinforcement Learning to Play 2048"
 subtitle = "And dominating my friend's \"Weddy-48\" leaderboard"
 date = 2026-04-09
-tags = ["reinforcement learning", "machine learning"]
+tags = ["reinforcement learning", "machine learning", "deep learning", "projects"]
 draft = false
 description = """
   I explored some reinforcement learning methodologies for 2048—yes, the 12-year-old tile sliding game.

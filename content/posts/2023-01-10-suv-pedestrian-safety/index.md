@@ -2,7 +2,7 @@
 title = "Analyzing Vehicle Size and Pedestrian Safety"
 subtitle = "Are SUVs and trucks more likely to kill pedestrians?"
 date = 2023-01-10
-tags = ["data analysis"]
+tags = ["data analysis", "statistics"]
 draft = false
 description = "Traffic deaths in the US are increasing, and big SUVs and trucks seem to be taking over the roads everywhere. Are those things related? I analyzed publicly available traffic crash data and found that yes, bigger cars are statistically more likely to injure or kill pedestrians."
 +++
@@ -30,8 +30,8 @@ I decided to analyze the data for myself to see if large vehicles are actually c
 
 ---
 
-*All code for the analysis below can be found in a Jupyter notebook [on GitHub](https://gist.github.com/djcunningham0/84c473db968f82bdf58b575ff3c0fb47).
-The notebook contains additional details that are not included in this article.*
+_All code for the analysis below can be found in a Jupyter notebook [on GitHub](https://gist.github.com/djcunningham0/84c473db968f82bdf58b575ff3c0fb47).
+The notebook contains additional details that are not included in this article._
 
 ## Dataset
 
@@ -41,12 +41,13 @@ It's easy to start working with Socrata datasets: simply follow the [documentati
 I used the [sodapy](https://github.com/xmunoz/sodapy) Python package to interact with the API.
 
 Specifically, I used the three datasets related to Chicago traffic crashes:
-* [Crashes](https://dev.socrata.com/foundry/data.cityofchicago.org/85ca-t3if): Basic details about the crash, such as where and when it occurred.
+
+- [Crashes](https://dev.socrata.com/foundry/data.cityofchicago.org/85ca-t3if): Basic details about the crash, such as where and when it occurred.
   One record per crash.
-* [People](https://dev.socrata.com/foundry/data.cityofchicago.org/u6pd-qa9d): Details about people involved in the crash.
+- [People](https://dev.socrata.com/foundry/data.cityofchicago.org/u6pd-qa9d): Details about people involved in the crash.
   Identifies whether a person was injured and whether they were a driver or pedestrian.
   At least one record per crash.
-* [Vehicles](https://dev.socrata.com/foundry/data.cityofchicago.org/68nd-jvt3): Details about vehicles involved in the crash.
+- [Vehicles](https://dev.socrata.com/foundry/data.cityofchicago.org/68nd-jvt3): Details about vehicles involved in the crash.
   Includes make and model and vehicle type.
   At least one record per crash.
 
@@ -67,13 +68,13 @@ This is easy to calculate from the `People` dataset.
 First we identify whether any of the people in the crash were pedestrians using the `person_type` field.
 Then we determine whether any pedestrian involved had an incapacitating or fatal injury using the `injury_classification` field.
 We'll actually create two target variables here—one for incapacitating injuries, one for fatal injuries—and model them separately later.
-*(Note: the dataset defines an incapacitating injury as any injury that "prevents the injured person from walking, driving, or normally continuing the activities they were capable of performing".)*
+_(Note: the dataset defines an incapacitating injury as any injury that "prevents the injured person from walking, driving, or normally continuing the activities they were capable of performing".)_
 
 The main feature we need to include is the vehicle type.
 This is mostly straightforward, as the `Vehicle` dataset includes a classification that distinguishes cars, SUVs, pickup trucks, etc.
 However, vehicles are not labeled consistently in the dataset.
 For example, one officer might label a Toyota RAV4 as an SUV while another might label it as a car.
-In order to account for these discrepancies, we'll check how each make/model is *most frequently* labeled and use that for all instances of that make/model.
+In order to account for these discrepancies, we'll check how each make/model is _most frequently_ labeled and use that for all instances of that make/model.
 After that small bit of feature engineering, we can easily calculate two binary features for each crash: one indicating whether an SUV was involved, and one indicating whether a pickup truck was involved.
 
 We should also control for factors other than vehicle that are likely to influence the outcome of a crash, such as weather conditions and the posted speed limit.
@@ -107,11 +108,11 @@ We'll fit two separate logistic regression models: one to predict pedestrian dea
 We're making several assumptions in the model, either explicitly or implicitly:
 
 1. SUVs and smaller cars are involved crashes involving pedestrians at an equal rate.
-We're only predicting the outcome of a crash, not whether the crash would have occurred at all with a different car.
-*(Note: there is [some evidence](https://www.iihs.org/news/detail/suvs-other-large-vehicles-often-hit-pedestrians-while-turning) that SUVs hit pedestrians at a higher rate than small cars, which would dispute this assumption.
-If that is indeed true, the impact of SUVs on pedestrian deaths may be worse than results below indicate.)*
+   We're only predicting the outcome of a crash, not whether the crash would have occurred at all with a different car.
+   _(Note: there is [some evidence](https://www.iihs.org/news/detail/suvs-other-large-vehicles-often-hit-pedestrians-while-turning) that SUVs hit pedestrians at a higher rate than small cars, which would dispute this assumption.
+   If that is indeed true, the impact of SUVs on pedestrian deaths may be worse than results below indicate.)_
 2. All SUVs are the same (and all pickup trucks are the same).
-Obviously this is not the case in the real world, as SUVs come in vastly different shapes and sizes.
+   Obviously this is not the case in the real world, as SUVs come in vastly different shapes and sizes.
 
 {{< figure
     src="suv_size_comparison.png"
@@ -138,22 +139,22 @@ The model also identifies some other interesting (but maybe not wholly surprisin
 The table below shows the impact of all features that the model found to be statistically significant.
 Here is a summary of the key findings:
 
-* **Large vehicles are more dangerous to pedestrians.**
-SUVs and pickup trucks are statistically more likely to cause incapacitating injuries.
-A fairly obvious result and the main topic of this article.
-* **High speeds are dangerous to pedestrians.**
-And, perhaps more importantly, *conditions that allow for high speeds* are dangerous to pedestrians.
-This is most obviously shown by the positive relationship with speed limit, but is also shown by other features (roads with more lanes or separated by a median often allow for higher speeds; parking lots do not).
-Perhaps surprisingly, snowy conditions *decrease* the likelihood of pedestrian injuries.
-This could be because cars are forced to drive slower on snowy roads.
-* **Low visibility conditions are dangerous to pedestrians.**
-Likelihood of injury increased at night.
-Crashes in alleys were also likely to cause injury, perhaps because drivers have decreased visibility in narrow alleys (and alleys are likely to have pedestrians and vehicles passing through the same space).
-* **Severe pedestrian injuries became more common during COVID.**
-There was a statistically significant change in behavior during the COVID-19 pandemic even when controlling for other features in the dataset.
-Two binary date features ("peak COVID" and "post peak COVID") were added to the model to account for this difference.
-This might be attributable to [emptier streets allowing for higher speeds](https://www.nytimes.com/2021/01/01/nyregion/nyc-traffic-deaths.html) during the height of the pandemic.
-(Note: the gross number of incapacitating injuries did not necessarily increase; the model is detecting an increase in the *rate* of incapacitating injuries during COVID.)
+- **Large vehicles are more dangerous to pedestrians.**
+  SUVs and pickup trucks are statistically more likely to cause incapacitating injuries.
+  A fairly obvious result and the main topic of this article.
+- **High speeds are dangerous to pedestrians.**
+  And, perhaps more importantly, _conditions that allow for high speeds_ are dangerous to pedestrians.
+  This is most obviously shown by the positive relationship with speed limit, but is also shown by other features (roads with more lanes or separated by a median often allow for higher speeds; parking lots do not).
+  Perhaps surprisingly, snowy conditions _decrease_ the likelihood of pedestrian injuries.
+  This could be because cars are forced to drive slower on snowy roads.
+- **Low visibility conditions are dangerous to pedestrians.**
+  Likelihood of injury increased at night.
+  Crashes in alleys were also likely to cause injury, perhaps because drivers have decreased visibility in narrow alleys (and alleys are likely to have pedestrians and vehicles passing through the same space).
+- **Severe pedestrian injuries became more common during COVID.**
+  There was a statistically significant change in behavior during the COVID-19 pandemic even when controlling for other features in the dataset.
+  Two binary date features ("peak COVID" and "post peak COVID") were added to the model to account for this difference.
+  This might be attributable to [emptier streets allowing for higher speeds](https://www.nytimes.com/2021/01/01/nyregion/nyc-traffic-deaths.html) during the height of the pandemic.
+  (Note: the gross number of incapacitating injuries did not necessarily increase; the model is detecting an increase in the _rate_ of incapacitating injuries during COVID.)
 
 The following table shows the data points supporting the summarized information above, and additional details (such as confidence intervals) can be found [on GitHub](https://gist.github.com/djcunningham0/84c473db968f82bdf58b575ff3c0fb47).
 
@@ -171,7 +172,7 @@ I'm hopeful that some hard evidence will spread awareness of the problem.
 
 So what can we do?
 
-Firstly, you're *not* a bad person if you drive an SUV or pickup truck.
+Firstly, you're _not_ a bad person if you drive an SUV or pickup truck.
 I'm not even going to try to talk you out of buying one.
 There are plenty of reasons people buy those vehicles (and some of those reasons might even be valid).
 

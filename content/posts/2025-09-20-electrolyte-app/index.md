@@ -2,7 +2,7 @@
 title = "Vibe coding a web app"
 subtitle = "How good are the latest and greatest LLM agents?"
 date = 2025-09-20
-tags = ["Streamlit", "web apps", "AI", "LLMs", "vibe coding"]
+tags = ["Streamlit", "web apps", "AI", "LLMs", "vibe coding", "projects"]
 draft = false
 description = "I built a simple Streamlit web app for a DIY electrolyte mix recipe. Embracing the \"vibe coding\" lifestyle, I decided to let a GitHub Copilot agent do most of the work for me. Here's how it went. (Spoiler: pretty good but far from perfect)"
 +++
@@ -63,14 +63,15 @@ I think it would be useful to have a simple app that calculates the recipe based
 
 Try as I might, I couldn't fully embrace full-on vibe coding, where you let the LLM agent make all of the changes and you never write a line of code yourself.
 Instead, I settled into this loose workflow which seemed to work pretty well:
+
 1. **Ask the LLM agent to do one thing.**
-For example, "build an app that does *X*" or "add a feature that does *Y*".
-I tried to avoid asking for multiple "things" at once.
+   For example, "build an app that does _X_" or "add a feature that does _Y_".
+   I tried to avoid asking for multiple "things" at once.
 2. **Verify that the new functionality works.**
-If it doesn't, explain what isn't working and ask the agent to try again.
-(It usually worked on the first try.)
+   If it doesn't, explain what isn't working and ask the agent to try again.
+   (It usually worked on the first try.)
 3. **Make some minor tweaks myself.**
-For example, I might rearrange some UI elements.
+   For example, I might rearrange some UI elements.
 4. **Repeat.**
 
 ## The results
@@ -80,8 +81,9 @@ I was able to build the app faster, and the final product is at least as good as
 That said, it was far from perfect and there are some pitfalls to watch out for.
 
 Before I give my more detailed thoughts, here's where you can check out the app:
-* Hosted on Streamlit cloud: https://nicelittleelectrolytemix.streamlit.app/
-* Source code on GitHub: https://github.com/djcunningham0/diy-electrolyte-mix
+
+- Hosted on Streamlit cloud: https://nicelittleelectrolytemix.streamlit.app/
+- Source code on GitHub: https://github.com/djcunningham0/diy-electrolyte-mix
 
 ### The good
 
@@ -103,7 +105,7 @@ For example, adding new ingredients for magnesium and calcium took just a few mi
 An LLM is far more than a code autocomplete tool—it can give you ideas you might not have thought of on your own.
 For example, in my original app I parametrized the inputs in a way that probably only felt intuitive to me (one such parameter was a "sugar-to-salt ratio").
 Claude parametrized the inputs much more intuitively: you enter your target nutritional values per serving (10g sugar, 400mg sodium, and so on).
-That parametrization made the app easier to use *and* it made the code easier to understand.
+That parametrization made the app easier to use _and_ it made the code easier to understand.
 There were other cases where I preferred my own design decisions to Claude's, but that's fine—it was useful to see multiple possible implementations so I could choose the best one.
 
 <figure>
@@ -115,11 +117,10 @@ There were other cases where I preferred my own design decisions to Claude's, bu
 </figcaption>
 </figure>
 
-
 ### The bad
 
-*Note: I don't think any of these shortcomings are unique to Claude.
-I've seen the same behaviors from every LLM I've used.*
+_Note: I don't think any of these shortcomings are unique to Claude.
+I've seen the same behaviors from every LLM I've used._
 
 **‼️ It made some critical mistakes.**
 Not in terms of errors in the code—the code ran fine.
@@ -128,9 +129,9 @@ My use case isn't exactly rocket science, but you must do quite a few things[^4]
 If there's a mistake anywhere along the way, the final recipe will be incorrect.
 That's potentially dangerous!
 
-And Claude *did* make mistakes.
+And Claude _did_ make mistakes.
 Several times!
-*Confidently!*
+_Confidently!_
 
 After Claude created the app from my initial prompt, I asked it to double check that the nutrition facts looked correct.
 And it immediately found mistakes in several calculations!
@@ -151,8 +152,7 @@ This is why I settled into the "ask, verify, tweak, repeat" workflow—a lot of 
 LLMs use too many code comments, and they love `try-except` blocks[^5].
 Sometimes they add useless comments like "this calculation has been corrected".
 And they tend to comment every few lines explaining each tiny code block.
-These behaviors are *somewhat* useful in normal LLM mode where the goal is to answer the user's question, but they're annoying in agent mode where you're building a real codebase.
-
+These behaviors are _somewhat_ useful in normal LLM mode where the goal is to answer the user's question, but they're annoying in agent mode where you're building a real codebase.
 
 # Conclusion
 
@@ -167,19 +167,22 @@ It's still important to know how to read and write code, and I'd recommend a "tr
 
 In my opinion, their utility far outweighs their limitations, so I'll surely use LLM agents again in the future!
 
+[^1]:
+    My original recipe only had sodium and potassium for electrolytes (and sugar for energy).
+    Sodium is the most important to include in an electrolyte mix, followed by potassium.
+    Magnesium and calcium also matter for muscle function, but you don't lose as much of them in sweat so they're much less important to include in an electrolyte mix.
 
-[^1]: My original recipe only had sodium and potassium for electrolytes (and sugar for energy).
-Sodium is the most important to include in an electrolyte mix, followed by potassium.
-Magnesium and calcium also matter for muscle function, but you don't lose as much of them in sweat so they're much less important to include in an electrolyte mix.
+[^2]:
+    I don't think the exact choice of model mattered very much.
+    I was curious to try Claude because I hadn't used it much and one of my coworkers had recently said that he liked it.
+    I expect any of the other popular models that offer "agent mode" would produce very similar results.
 
-[^2]: I don't think the exact choice of model mattered very much.
-I was curious to try Claude because I hadn't used it much and one of my coworkers had recently said that he liked it.
-I expect any of the other popular models that offer "agent mode" would produce very similar results.
-
-[^3]: You might notice that I didn't include the new ingredients (magnesium and calcium) in my prompt.
-I decided to have Claude recreate my original recipe first, then I'd ask it to make changes later.
+[^3]:
+    You might notice that I didn't include the new ingredients (magnesium and calcium) in my prompt.
+    I decided to have Claude recreate my original recipe first, then I'd ask it to make changes later.
 
 [^4]: Including but not limited to: use correct molecular weights; use correct molecular formulas; calculate correct ingredient amounts (nontrivial since some ingredients contribute multiple minerals); use correct densities of each ingredient; calculate correct volumes; and validate that nutrition facts match targets.
 
-[^5]: There is of course nothing wrong with `try-except` blocks, but they cause code bloat when overused for things like input validation.
-For simple, non-production-grade apps they're usually not necessary.
+[^5]:
+    There is of course nothing wrong with `try-except` blocks, but they cause code bloat when overused for things like input validation.
+    For simple, non-production-grade apps they're usually not necessary.
