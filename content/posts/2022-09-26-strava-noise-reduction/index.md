@@ -103,8 +103,9 @@ We have the full series of recorded GPS measurements from start to finish.
 That's important because it changes which data is available to our filter; specifically, we know what future measurements look like.
 Suppose we're attempting to remove noise from \(m_t\), the measurement at time \(t\):
 
-- Real-time use case: we have \(m*t\) and all previous measurements (\(m*{t-1}\), \(m\_{t-2}\), ...).
-- Strava use case: we have \(m*t\), all previous measurements, *and all future measurements* (\(m*{t+1}\), \(m\_{t+2}\), ...).
+<!-- prettier-ignore -->
+- Real-time use case: we have \(m_t\) and all previous measurements (\(m_{t-1}\), \(m_{t-2}\), ...).
+- Strava use case: we have \(m_t\), all previous measurements, *and all future measurements* (\(m_{t+1}\), \(m_{t+2}\), ...).
 
 Can we make use of those future measurements in a Kalman filter?
 Yes!

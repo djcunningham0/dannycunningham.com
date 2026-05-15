@@ -93,9 +93,10 @@ Otherwise it goes down.
 The \(K\) value is another Elo parameter that roughly determines how much a player's rating can change after a single game.
 It's common to set \(K\) to some fixed value, like \(K = 32\), or some systems will vary the value of \(K\) depending on how many games a player has previously played.
 
+<!-- prettier-ignore -->
 Sometimes it's helpful to walk through an example.
 Suppose Player A starts with a rating of 1200 and Player B starts with a rating of 1000, and suppose Player A wins the game.
-The equations above tell us that Player A's expected score is \(E_A = 0.76\), actual score is \(S_A = 1\), and new rating is \(R'\_A = 1207.7\).
+The equations above tell us that Player A's expected score is \(E_A = 0.76\), actual score is \(S_A = 1\), and new rating is \(R'_A = 1207.7\).
 (I used \(D = 400\) and \(K = 32\) in this example.)
 
 ## Extending Elo to multiplayer games
