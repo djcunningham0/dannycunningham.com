@@ -747,3 +747,67 @@ article img:not(.about-photo):not(.sidebar-photo) {
 article img:not(.about-photo):not(.sidebar-photo):hover {
     opacity: 0.85;
 }
+
+/* Metric Cards */
+.mc {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+
+.mc h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 2px;
+    color: var(--text-primary);
+}
+
+.mc .dir {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0 0 12px;
+}
+
+.mc p {
+    margin: 0 0 8px;
+}
+
+.mc .val {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.mc .lbl {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.mc .track {
+    height: 8px;
+    background: var(--bg-color);
+    border-radius: 4px;
+    position: relative;
+    margin: 8px 0 6px;
+}
+
+.mc .fill {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.mc .tick {
+    position: absolute;
+    top: -6px;
+    width: 3px;
+    height: 20px;
+    border-radius: 2px;
+    background: var(--text-primary);
+}
+
+.mc .goal {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin: 0;
+}
