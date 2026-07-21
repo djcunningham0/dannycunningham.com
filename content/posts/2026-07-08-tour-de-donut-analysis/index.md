@@ -174,6 +174,116 @@ So it looks like I've got a pretty low chance of winning, but maybe a solid chan
 Not bad!
 That's _if_ I can achieve my goal, of course, which is no sure thing... I'll follow up next week with my actual results.
 
+---
+
+## Post-race update
+
+I didn't win.
+
+But I came pretty close!
+My elapsed time was 2:22:30 and I ate _14_ donuts, giving me an adjusted time of 1:12:30.
+That was good enough for **4th place**[^6]!
+
+Full results [here](https://results.raceroster.com/v3/events/mkvkwsdfjf5nxdwc/race/299602?filter_search=&sort=overallPlace+asc).
+I _just_ missed a top-3 finish—I was just 20 seconds behind 3rd place.
+The winner beat me pretty good, with a time of 0:43:44.
+He ate more donuts (16) _and_ had a better elapsed time (2:03:44) than me.
+
+So how'd I do relative to my goals? Here are the details, using my [Strava activity](https://www.strava.com/activities/19272612367) for the speed and timing estimates:
+
+<figure>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+  <div class="mc">
+    <h4>Donuts eaten</h4><p class="dir">higher better</p>
+    <p><span class="val">14</span> <span class="lbl">actual</span></p>
+    <div class="track"><div class="fill" style="width:100%;background:#1baf7a"></div><div class="tick" style="left:85.7%"></div></div>
+    <p class="goal">Goal: 12</p>
+  </div>
+  <div class="mc">
+    <h4>Moving speed (mph)</h4><p class="dir">higher better</p>
+    <p><span class="val">19.6</span> <span class="lbl">actual</span></p>
+    <div class="track"><div class="fill" style="width:98%;background:#eda100"></div><div class="tick" style="left:100%"></div></div>
+    <p class="goal">Goal: 20</p>
+  </div>
+  <div class="mc">
+    <h4>Seconds per donut</h4><p class="dir">lower better</p>
+    <p><span class="val">137</span> <span class="lbl">actual</span></p>
+    <div class="track"><div class="fill" style="width:100%;background:#e34948"></div><div class="tick" style="left:43.8%"></div></div>
+    <p class="goal">Goal: 60</p>
+  </div>
+</div>
+
+<figcaption>
+Bars show my actual results, ticks show my "realistic" goal targets.
+</figcaption>
+
+</figure>
+
+My donut and speed goals were pretty spot on, but I vastly overestimated how quickly I could eat that many donuts.
+What went wrong?
+I got really full and hit a wall at the second donut stop.
+But you don't have to take my word for it—take a look at my donut eating splits:
+
+| Donut stop | Donuts eaten | Time       | Seconds per donut | Net time gained |
+| ---------- | ------------ | ---------- | ----------------- | --------------- |
+| Stop 1     | 10           | 14 minutes | 84                | 36 minutes      |
+| Stop 2     | 4            | 18 minutes | 270 (4.5 minutes) | 2 minutes       |
+
+At the first stop I was reasonably close to my goal of 60 seconds per donut.
+At the second... not even close.
+
+### Was the second donut stop even worth it?
+
+Probably, but just barely.
+
+Since it took me so long to eat those 4 donuts, the stop only netted me 2 minutes off my time.
+Theoretically, I might have been able to ride the last 10 miles faster with 4 fewer donuts in my stomach.
+Could I have ridden fast enough to offset those 2 minutes?
+
+I averaged 19.3 miles per hour over the last 10 miles.
+I would have had to ride 20.6 miles per hour (1.3 mph, or 7%, faster) in order shave 2 minutes off my time.
+Could I have done it if my stomach were 4 donuts lighter?
+_Maybe,_ but probably not.
+In my fastest 10-mile stretch of the whole race (roughly miles 14-24) I averaged 20.2 miles per hour.
+Donuts or not, I probably didn't have enough strength or stamina to go even faster than that over the last 10 miles.
+
+### What would I do differently next time?
+
+I think there are two viable strategies to win this race:
+
+- **Strategy 1:** Eat ~75% of your donuts at the first stop and ~25% at the second.
+  Roughly what I did.
+  Good choice if eating is your strength.
+- **Strategy 2:** Ride really fast, skip the first donut stop, and eat as many donuts as you can at the second stop.
+  Good choice if cycling is your strength.
+
+If I did this race again, **I'd strongly consider Strategy 2.**
+
+But how is that strategy viable?
+I'd probably eat fewer donuts overall so I'd have to ride considerably faster, and I just admitted that riding 1.3 mph faster probably wasn't realistic.
+It comes down to the dynamics of bike racing.
+Specifically, you can ride much faster in a (fast) group[^7].
+If you stop for donuts, the fast groups leave you in the dust.
+
+Here's how I'd attempt the strategy.
+I'd try to hang with the lead group of riders for the first 26 miles, or as long as possible.
+The fastest riders (who did not stop for donuts) averaged 24 mph over the whole route.
+I hung with them (fairly easily) for for the first 7 miles (until donut stop #1), and I think could reasonably hang on for a good while longer.
+
+_If_ I could achieve each of these things (and none is a given):
+
+- Average 23 mph for the first 26 miles (up from my actual speed of ~20 mph)
+- Eat 10 donuts at the second donut stop (same number I actually ate at the first stop)
+- Eat those donuts in 14 minutes (same amount of time the first 10 actually took me)
+- Average 19.3 mph for the last 10 miles (same as my actual speed)
+
+Then I'd finish with a time of 1:02:54.
+That's 10 minutes faster than my actual time, and would have been good enough for second place.
+
+Could I actually hit those numbers?
+I'm not sure, but this seems like a more plausible path to improving my time than eating more donuts—that just wasn't going to happen.
+Maybe I'll be back next year to give it another shot...[^8]
+
 [^1]:
     The Staunton, IL race is the original Tour de Donut, according to their website.
     There are a handful of similar copycat races (the one in [Ohio](https://www.thetourdedonut.com/Race/OH/TROY/TourDeDonut) might be the largest).
@@ -182,13 +292,26 @@ That's _if_ I can achieve my goal, of course, which is no sure thing... I'll fol
     There's also a shorter 12-month route and a tandem division.
     Combined, there are typically a little over 1,000 participants.
 
-[^2]: I used the highly recommended approach of smashing several donuts into a flat, dense patty and eating them together.
+[^3]: I used the highly recommended approach of smashing several donuts into a flat, dense patty and eating them together.
 
-[^3]: Of course, times aren't really directly comparable from one year to the next due to different weather and course conditions.
+[^4]: Of course, times aren't really directly comparable from one year to the next due to different weather and course conditions.
 
-[^4]:
+[^5]:
     I didn't fit the model on the results dataset directly.
     Instead, I bootstrapped a larger dataset.
     I repeatedly sampled a simulated field of _N_=700 records (roughly a typical field size in recent years) from the historical data and computed the winner of that simulated race.
     I created a dataset of 100 such simulated races, then I fit the logistic regression model on that dataset.
     This approach gives us a larger and more diverse dataset.
+
+[^6]:
+    Out of 472 finishers.
+    (A lower number than usual.
+    The rain likely kept some people away.)
+
+[^7]:
+    At high speeds, most (80-90+%) resistance comes from aerodynamic drag.
+    When you ride behind other riders, they block the wind so you can ride faster with the same effort.
+    The effect can be dramatic: up to a ~30-40% drag reduction, yielding 2-5 mph faster speeds.
+    (The actual numbers are highly dependent on factors like hills, wind speed and direction, size of group, size of riders, and so on.)
+
+[^8]: Or maybe not... it was pretty unpleasant at times 🤣
