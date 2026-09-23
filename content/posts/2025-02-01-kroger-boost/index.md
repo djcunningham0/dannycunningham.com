@@ -55,7 +55,7 @@ Let's assume these promotions run at a frequency such that 5% of my purchases ge
 > 5% of purchases get 2x points --> $5,500 x 5% x 1% --> **$3 extra cash back** (rounded to nearest $1)
 
 <figure>
-<img src="5x_points.png" class="img-narrow" style="--img-width: 75%;" alt="5x fuel points promo for Boost members">
+<img src="5x_points.png" alt="5x fuel points promo for Boost members">
 <figcaption>
     An example of a Boost-exclusive promo for extra fuel points.
 </figcaption>

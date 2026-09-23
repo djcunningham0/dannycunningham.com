@@ -314,7 +314,7 @@ The home page shows all of the pre-loaded races along with some metadata.
 Clicking a race brings you into the race detail screen.
 
 <figure>
-<img src="app_home_wide.png" style="max-width: 400px; margin: 0 auto; display: block;">
+<img src="app_home_wide.png">
 </figure>
 
 #### Race screen
@@ -325,7 +325,7 @@ You can update the live odds of the horses manually or by clicking the "Live odd
 At any point, you can click "Get Predictions" to view the predicted win probabilities and EVs using the current odds.
 
 <figure>
-<img src="app_race_wide.png" style="max-width: 400px; margin: 0 auto; display: block;">
+<img src="app_race_wide.png">
 </figure>
 
 #### Predictions screen
@@ -334,7 +334,7 @@ The predictions screen shows you which horse(s) the model recommends betting on.
 It sends the current odds to the prediction endpoint, which returns win probabilities and EVs.
 
 <figure>
-<img src="app_preds_wide.png" style="max-width: 400px; margin: 0 auto; display: block;">
+<img src="app_preds_wide.png">
 <figcaption>
   The dollar amounts show the expected profit per dollar bet.
   E.g., "+12¢" means a $1 bet is expected to return 12 cents of profit.

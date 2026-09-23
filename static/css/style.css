@@ -568,11 +568,6 @@ video {
     margin: 0 auto;
 }
 
-.img-narrow {
-    width: clamp(280px, 75%, 100%);
-    margin: 1.5rem auto;
-}
-
 figure {
     margin: 2rem 0;
 }

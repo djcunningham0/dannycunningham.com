@@ -74,7 +74,7 @@ Another problem we identified was that unavailable (Checked Out, On Hold, In Mai
 Recall this carpet cleaner example:
 
 <figure>
-<img src="carpet_cleaner_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="carpet_cleaner_results.png">
 <figcaption>The "Available" one should be ranked first.</figcaption>
 </figure>
 

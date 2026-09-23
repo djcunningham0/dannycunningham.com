@@ -109,7 +109,7 @@ I learned three things from that exercise:
 3. Biking with a stomach full of 6 donuts felt surprisingly fine, and I wasn't any slower.
 
 <figure>
-<img src="donuts.jpeg" style="max-width: 500px; margin: 0 auto; display: block;">
+<img src="donuts.jpeg">
 <figcaption>
     My practice donuts.
     Heavier than I expected, and 310 calories each.

@@ -82,7 +82,7 @@ We know a lot of search results are poorly ranked, with highly relevant items ap
 For example, recall the ["table" example from Part 1]({{< relref "posts/2025-06-26-chicago-tool-library-search-1/#irrelevant-results" >}}):
 
 <figure>
-<img src="table_results_annotated.png" class="img-narrow" style="--img-width: 80%;">
+<img src="table_results_annotated.png">
 <figcaption>
   "Folding table" is the most relevant item, but it's less likely to be clicked (or even seen) because it's so far down in the results.
 </figcaption>

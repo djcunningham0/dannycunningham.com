@@ -34,7 +34,7 @@ As such, the app includes a search box where users can search for tools by name.
 For example, if I search for "circular saw" I get these results:
 
 <figure>
-<img src="circular_saw_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="circular_saw_results.png">
 <figcaption>Search results for "circular saw". Looks pretty good!</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ Or, at least, the first few results are not relevant.
 
 For example, these are the results when I search for "table":
 
-<img src="table_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="table_results.png">
 
 Now, those results aren't *completely* terrible.
 They all at least have "table" in the name.
@@ -106,7 +106,7 @@ Diversity is a bit of a mixed bag in Circulate.
 For some searches, such as "gardening", the results are pretty diverse:
 
 <figure>
-<img src="gardening_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="gardening_results.png">
 <figcaption>
     An example of good diversity.
     The first 6 results are all distinct items and they're all relevant to the query.
@@ -117,7 +117,7 @@ For some searches, such as "gardening", the results are pretty diverse:
 But the results for "saw" are a different story:
 
 <figure>
-<img src="saw_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="saw_results.png">
 <figcaption>
     Not so good diversity.
     All of the top results are reciprocating saws.
@@ -137,11 +137,11 @@ Not a great user experience.
 Search in Circulate is not very robust to typos or misspellings.
 For example, when you search for "wheelbarrow" you'll get several results:
 
-<img src="wheelbarrow_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="wheelbarrow_results.png">
 
 But when you search for the common [eggcorn](https://www.merriam-webster.com/dictionary/eggcorn) "wheel barrel" you get no results:
 
-<img src="wheel_barrel_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="wheel_barrel_results.png">
 
 Ideally, the search functionality figure out the intent of your search even if it was slighlty mispelled.
 
@@ -157,7 +157,7 @@ When we have multiple copies of the same tool, it would make sense to show the "
 That doesn't always happen.
 For example:
 
-<img src="carpet_cleaner_results.png" class="img-narrow" style="--img-width: 80%;">
+<img src="carpet_cleaner_results.png">
 
 Each of those carpet cleaners looks equally relevant, but only the 4th one is available to be borrowed right now.
 That one should be ranked above the "checked out" and "in maintenance" ones.

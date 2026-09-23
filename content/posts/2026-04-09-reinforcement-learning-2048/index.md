@@ -33,7 +33,7 @@ The nominal objective is to achieve the 2048 tile, which requires a bit of skill
 Good players can achieve 4096, or even 8192 tiles and beyond.
 
 <figure>
-<img src="2048_gameplay.png" style="max-width: 400px; display: block; margin: auto;">
+<img src="2048_gameplay.png">
 <figcaption>
 Screenshot of the <a href="https://classic.play2048.co">official 2048 game</a>.
 </figcaption>
@@ -54,7 +54,7 @@ There are Red Dog waterfalls and volcanoes and planets.
 It's beautiful.
 
 <figure>
-<img src="weddy_48_gameplay.png" style="max-width: 400px; display: block; margin: auto;">
+<img src="weddy_48_gameplay.png">
 <figcaption>
 Screenshot of the custom "Weddy-48" game.
 Same mechanics, better images.
@@ -196,7 +196,7 @@ Choosing the tuples is very important—the network will only be effective if th
 Rather than reinvent the wheel, I used the same 4x6-tuple network shown to work well in [this paper by Yeh et al.](https://arxiv.org/pdf/1606.07374)
 
 <figure>
-<img src="tuples_yeh.png" style="max-width: 350px; display: block; margin: auto;">
+<img src="tuples_yeh.png">
 <figcaption>
 The 4x6-tuple network I used for my analysis.
 </figcaption>
