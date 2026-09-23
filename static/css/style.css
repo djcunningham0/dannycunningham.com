@@ -562,8 +562,10 @@ tr:last-child td {
 img,
 video {
     max-width: 100%;
+    max-height: 550px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 .img-narrow {
